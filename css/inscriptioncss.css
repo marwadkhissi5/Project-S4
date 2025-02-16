@@ -45,6 +45,8 @@ header {
     font-weight: bold;
     margin: 0 auto;
     text-shadow: 1px 2px 3px grey;
+    color: white;
+    Text-align: left;
 }
 
 nav {
@@ -142,6 +144,8 @@ input[type="submit"] {
     margin-top: 15px;
     transition: 0.3s;
     border-radius: 10px;
+    display: block;
+    margin: 20px auto;
 
 }
 
