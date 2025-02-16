@@ -10,15 +10,18 @@ body {
     display: flex;
     flex-direction: column;
     animation: changeBackground 15s infinite;
-    transition: background-image 1s ease-in-out;
+    transition: background-image 1s ease-in-out; /* Ajoute une transition douce */
 }
 
+/* Animation améliorée */
 @keyframes changeBackground {
     0%   { background-image: url('mascate.jpg'); }
     33%  { background-image: url('williamsbourg.jpg'); }
     66%  { background-image: url('xian.jpg'); }
-    100% { background-image: url('mascate.jpg'); }
+    100% { background-image: url('mascate.jpg'); } /* Boucle */
 }
+
+
 
 header {
     background: linear-gradient(to left, #eeb868, #5d74b8);
@@ -42,6 +45,9 @@ header {
     font-weight: bold;
     margin: 0 auto;
     text-shadow: 1px 2px 3px grey;
+    font-family: Arial, Helvetica, sans-serif;
+    color: white;
+    Text-align: left;
 }
 
 nav {
@@ -89,7 +95,7 @@ nav ul li a:hover {
     border-radius: 10px;
 }
 
-.box {
+.rightbox {
     width: 80%;
     height:80%;
     background: white;
@@ -98,12 +104,23 @@ nav ul li a:hover {
     border-radius: 10px;   
 }
 
-h2 { 
+h1 { 
     font-family: Arial, Helvetica, sans-serif;
     color: #5d74b8;
     font-size: 1.2rem;
     margin-top: 40px;
     margin-bottom: 35px;
+}
+
+Label{
+    font-family: Arial, Helvetica, sans-serif;
+    text-transform: uppercase;
+    font-size: 12px;
+    letter-spacing: 1px;
+    color:#5d74b8;
+    margin-left: 2px;
+    margin-top: 20px;
+
 }
 
 input{
@@ -128,19 +145,14 @@ input[type="submit"] {
     margin-top: 15px;
     transition: 0.3s;
     border-radius: 10px;
-
+    display: block;
+    margin: 20px auto;
 }
 
 input[type="submit"]:hover {
     color: #5d74b8;
     background-color: #eeb868;
   }
-
-.button-container {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-}
 
 input[type="password"], input[type="email"], input[type="text"], input[type="number"] {
     display: inline-block;
@@ -161,6 +173,8 @@ input[value="XXXX"], input[value="........"], input[value="18"] {
     margin-bottom: 20px;
     margin-top: 10px;
 }
+
+
 
 footer {
     background: linear-gradient(to left, #eeb868, #5d74b8);
