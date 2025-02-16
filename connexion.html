@@ -2,8 +2,8 @@
 
 <head>
     <meta charset="UTF-8">
-    <title>Fairy Escapes - Page de Connexion</title>
-    <link rel="stylesheet" type="text/css" href="connexioncss.css">
+    <title>Fairy Escapes - Page d'Inscription</title>
+    <link rel="stylesheet" type="text/css" href="inscriptioncss.css">
 </head>
 
 <body>
@@ -22,25 +22,34 @@
             </ul>
         </nav>
 </header>
+
 <div class="container">
 	<div class="rightbox">
 		<div class="Profil">
-			<h1>Connexion</h1>
-    			<form enctype="multipart/form-data" method="post">
-				<label for="email">Email :</label>
-				<input type="email" id="email" name="email" value="XXXX"/>
+			<h1>Inscription</h1>
+			<form enctype="multipart/form-data" method="post">
+				<label for="nom">Nom:</label>
+				<input type="text" id="nom" name="nom" value="XXXX" />
+        			<label for="prenom">Prénom:</label>						<input type="text" id="prenom" name="prenom" value="XXXX"/>
+              			<label for="email">Email:</label>
+             			<input type="email" name="email" value="XXXX">
+          			<label for="age">Âge:</label></td>
+				<input type="number" name="age" min="18" max="100" value="18" step="1">
 				<label for="password">Mot de Passe :</label>
 				<input type="password" id="password" name="password" value="........"/>
-        			<input type="submit" value="Se connecter">
-
+                        	<input type="submit" value="S'inscrire">
+    		
 				<div class=other>
-        			Toujours pas inscrite ? <a href="inscription.html">Inscrivez-vous</a>
+      			 	Déjà inscrite ? <a href="connexion.html">Connectez-vous</a>
     				</div>
-			</form>
+
+  			  </form>
 		</div>
 	</div>
 </div>
-			
+
+
+
 <footer>
 	<p>&copy; 2025 Fairy Escapes | Contact : info@fairyescapes.com</p>
 </footer>
