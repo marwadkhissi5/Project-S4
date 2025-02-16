@@ -1,7 +1,6 @@
 <html>
 
 <head>
-    <meta charset="UTF-8">
     <title>Fairy Escapes - Page de Réservation</title>
     <link rel="stylesheet" type="text/css" href="reservationcss.css">
 </head>
@@ -39,15 +38,78 @@
                     <option value="chine">Mulan - Chine, Xi'nen</option>
                     <option value="usa">Pocahontas - États-Unis, Williamsburg</option>
                 </select>
-
-                <label for="personnes">Nombre de personnes :</label>
+		<label for="personnes">Nombre de personnes :</label>
                 <input type="number" id="personnes" name="personnes" min="1" value="1" required>
+		<div class="budget-section">
+   		 <span>Budget :</span>
 
+    			<input type="radio" name="budget" id="budget1" value="500">
+    			<label for="budget1">500€ - 1000€</label>
+
+    			<input type="radio" name="budget" id="budget2" value="2000">
+   			<label for="budget2">1000€ - 2000€</label>
+
+ 		   	<input type="radio" name="budget" id="budget3" value="3000">
+  			<label for="budget3">Plus de 2000€</label>
+		</div>
                 <input type="submit" value="Rechercher">
             </form>
         </div>
 	</div>
 </div>	
+
+<div class="carousel">
+    <div class="slides">
+
+        <div class="slide">
+            
+                <div class="slide-header">Séjour Jasmine - Oman</div>
+                <img src="jasmine.jpg" alt="Oman - Séjour Jasmine">
+           
+            <div class="activities-container">
+                <div class="activity-card">
+                    <h3>Voyage complet - Séjour Jasmine à Oman</h3>
+                    <span class="title">Safari dans le désert:</span> <p>Traversez les dunes d'Oman en 4x4.</p>
+                    <span class="title">Visite du souk:</span> <p>Découvrez les trésors cachés des marchés omanais.</p>
+                    <span class="title">Croisière en dhow:</span> <p>Naviguez sur la mer d’Arabie comme dans un conte.</p>
+                    <span class="price">À partir de 699,99€</span>
+                </div>
+            </div>
+        </div>
+
+        <div class="slide">
+           
+                <div class="slide-header">Séjour Amérique - Pocahontas</div>
+                <img src="pocahontas.jpg" alt="Amérique - Séjour Pocahontas">
+        
+            <div class="activities-container">
+                <div class="activity-card">
+                    <h3>Voyage complet - Séjour Pocahontas aux États-Unis</h3>
+                    <span class="title">Kayak en rivière:</span> <p>Explorez les rivières de Williamsburg comme Pocahontas.</p>
+                    <span class="title">Randonnée en forêt:</span> <p>Partez sur les traces des tribus amérindiennes.</p>
+                    <span class="title">Soirée feu de camp:</span> <p>Vivez une soirée typique avec chants.</p>
+                    <span class="price">À partir de 759,99€</span>
+                </div>
+            </div>
+        </div>
+
+        <div class="slide">
+
+                <div class="slide-header">Séjour Mulan - Chine</div>
+                <img src="mulan.jpg" alt="Chine - Séjour Mulan">
+     
+            <div class="activities-container">
+                <div class="activity-card">
+                    <h3>Voyage complet - Séjour Mulan en Chine</h3>
+                    <span class="title">Randonnée sur la Muraille:</span> <p>Marchez sur les traces des guerriers de l'Empire.</p>
+                    <span class="title">Cours de Kung-Fu:</span> <p>Apprenez les bases du Kung-Fu, l'art des guerriers.</p>
+                    <span class="title">Dégustation de thé:</span> <p>Découvrez les secrets du thé chinois.</p>
+                    <span class="price">À partir de 899,99€</span>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
 
 <footer>
         <p>&copy; 2025 Fairy Escapes | Contact : info@fairyescapes.com</p>
