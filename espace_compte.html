@@ -2,12 +2,12 @@
 
 <head>
     <meta charset="UTF-8">
-    <title>Fairy Escapes - Page Utilisateur</title>
-    <link rel="stylesheet" href="espace_compte.css">
+    <title>Fairy Escapes - Page Administrateur</title>
+    <link rel="stylesheet" type="text/css" href="admincss.css">
 </head>
-
 <body>
-    <header>
+
+<header>
         <div class="logo">
             <h1>Fairy Escapes</h1>
         </div>
@@ -18,33 +18,76 @@
                 <li><a href="presentation.html">À propos</a></li>
                 <li><a href="connexion.html">Se Connecter</a></li>
                 <li><a href="inscription.html">S'Inscrire</a></li>
-				<li><a href="espacec_compte.html">Votre Espace</a></li>
+		<li><a href="espace_compte.html">Votre Espace</a></li>
             </ul>
         </nav>
 </header>
 
-    <div class="container">
-    <div class="rightbox">
-        <div class="Profil">
-	<form enctype="multipart/form-data" method="post">
-            <h1>Profil - Mon Compte</h1>
-            	<label for="nom">Nom:</label>
-		<input type="text" id="nom" name="nom" value="XXXX" />
-       		<label for="prenom">Prénom:</label>						<input type="text" id="prenom" name="prenom" value="XXXX"/>
-              	<label for="email">Email:</label>
-             	<input type="email" name="email" value="XXXX">
-          	<label for="age">Âge:</label></td>
-		<input type="number" name="age" min="18" max="100" value="18" step="1">
-		<label for="password">Mot de Passe :</label>
-		<input type="password" id="password" name="password" value="........"/>
-            <input type="submit" value="Mettre à jour">
-	</form>
+    <body>
+        
+        <div class="container">
+            <div class="box">
+            <h2 class="title">Gestion des Utilisateurs</h2>
+            <form enctype="multipart/form-data" method="post">
+                <table border="1">
+                    <thead>
+                        <tr>
+                            <th>Nom</th>
+                            <th>Prénom</th>
+                            <th>Âge</th>
+                            <th>Email</th>
+                            <th>Statut</th>
+                            <th>Actions</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td><input type="text" name="nom" value="Dupont"></td>
+                            <td><input type="text" name="prénom" value="Jean"></td>
+                            <td><input type="text" name="âge" value="30"></td>
+                            <td><input type="email" name="email" value="jean.dupont@email.com"></td>
+                            <td><input type="text" name="statut" value="VIP"></td>
+                            <td>
+                                <button type="submit" name="action" value="vip_jean">VIP</button>
+                                <button type="submit" name="action" value="ban_jean">Bannir</button>
+                                
+                            </td>
+                        </tr>
+                        <tr>
+                            <td><input type="text" name="nom" value="Karim"></td>
+                            <td><input type="text" name="prénom" value="Karima"></td>
+                            <td><input type="text" name="âge" value="19"></td>
+                            <td><input type="email" name="email" value="karima.karim@email.com"></td>
+                            <td><input type="text" name="statut" value="Banni"></td>
+                            <td>
+                                <button type="submit" name="action" value="vip_karima">VIP</button>
+                                <button type="submit" name="action" value="ban_karima">Bannir</button>
+                                
+                            </td>
+                        </tr>
+                        <tr>
+                            <td><input type="text" name="nom" value="Curie"></td>
+                            <td><input type="text" name="prénom" value="Marie"></td>
+                            <td><input type="text" name="âge" value="27"></td>
+                            <td><input type="email" name="email" value="marie.curie@email.com"></td>
+                            <td><input type="text" name="statut" value="Client"></td>
+                            <td>
+                                <button type="submit" name="action" value="vip_marie">VIP</button>
+                                <button type="submit" name="action" value="ban_marie">Bannir</button>
+                                
+                            </td>
+                        </tr>
+                    </tbody>
+                </table>
+                <div class="button-container">
+                <input type="submit" value="Mettre à jour">
+                </div>
+            </form>
+            </div>
         </div>
-    </div>
-</div>
-    <footer>
-        <p>&copy; 2025 Fairy Escapes | Contact : info@fairyescapes.com</p>
-    </footer>
 
+<footer>
+    <p>&copy; 2025 Fairy Escapes | Contact : info@fairyescapes.com</p>
+</footer>
 </body>
 </html>
