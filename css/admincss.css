@@ -1,0 +1,247 @@
+body {
+    margin: 0;
+    padding: 0;
+    font-family: Arial, sans-serif;
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    height: 100vh;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    animation: changeBackground 15s infinite;
+    transition: background-image 1s ease-in-out;
+}
+
+@keyframes changeBackground {
+    0%   { background-image: url('mascate.jpg'); }
+    33%  { background-image: url('williamsbourg.jpg'); }
+    66%  { background-image: url('xian.jpg'); }
+    100% { background-image: url('mascate.jpg'); }
+
+}
+
+header {
+    background: linear-gradient(to left, #eeb868, #5d74b8);
+    color: white;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px;
+    width: 100%;
+    max-width: 100%;
+}
+
+
+.logo {
+    text-align: center;
+    width: 100%;
+}
+
+.logo h1 {
+    font-size: 2em;
+    font-weight: bold;
+    margin: 0 auto;
+    text-shadow: 1px 2px 3px grey;
+    font-family: Arial, Helvetica, sans-serif;
+    color: white;
+    Text-align: left;
+}
+
+h1 { 
+    font-family: Arial, Helvetica, sans-serif;
+    color: #5d74b8;
+    font-size: 1.2rem;
+    margin-top: 40px;
+    margin-bottom: 35px;
+}
+
+nav {
+    width: 100%;
+    overflow: hidden;
+    display: flex;
+    justify-content: center;
+}
+
+nav ul {
+    list-style: none;
+    display: flex;
+    padding: 0 auto;
+}
+
+nav ul li {
+    display: flex;
+    
+}
+
+nav ul li a {
+    color: white;
+    text-decoration: none;
+    font-size: 1.1em;
+    transition: 0.3s;
+    padding: 10px 15px;
+}
+
+nav ul li a:hover {
+    background-color: rgba(255, 255, 255, 0.3);
+    border-radius: 5px;
+}
+
+
+.container {
+    background: linear-gradient(to left, #eeb868, #5d74b8);
+    width: 800px;
+    height: 750px;
+    margin: 0 auto;
+    margin-top: 5%;
+    margin-bottom:5%;
+    box-shadow: 2px 5px 20px rgba(0,0,0,.5);
+    display: flex;
+    justify-content: center; 
+    align-items: center; 
+    border-radius: 10px;
+    text-align: left;
+}
+
+.box {
+    width: 80%;
+    height:80%;
+    background: white;
+    padding: 30px;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.2);
+    border-radius: 10px;   
+}
+
+h2 { 
+    font-family: Arial, Helvetica, sans-serif;
+    color: #5d74b8;
+    font-size: 1.2rem;
+    margin-top: 40px;
+    margin-bottom: 35px;
+}
+
+input{
+    width: 80%;
+    padding: 10px;
+    Margin-top: 15px;
+    border: 2px solid #c19a6b;
+    border-radius: 5px;
+    font-size: 16px;
+}
+
+input[type="submit"] {
+    font-family:Arial, Helvetica, sans-serif;
+    text-transform: uppercase;
+    font-size: 15px;
+    border:0;
+    background-color: #5d74b8;
+    color: #eeb868;
+    padding: 7px 15px;
+    box-shadow: 0px 2px 4px 0px rgba(0,0,0,.2);
+    cursor: pointer;
+    margin-top: 15px;
+    transition: 0.3s;
+    border-radius: 10px;
+
+}
+
+.button-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+input[type="submit"]:hover {
+    color: #5d74b8;
+    background-color: #eeb868;
+  }
+
+input[type="password"], input[type="email"], input[type="text"], input[type="number"] {
+    display: inline-block;
+    padding: 4px;
+    width:100%;
+    margin: 2px;
+    margin-bottom: 15px;
+    margin-top: 10px;
+}
+
+input[value="XXXX"], input[value="........"], input[value="18"] {
+    font-family: Arial, Helvetica, sans-serif;
+    text-transform: uppercase;
+    font-size: 8px;
+    letter-spacing: 1px;
+    color:#5d74b8;
+    font-weight: bold;
+    margin-bottom: 20px;
+    margin-top: 10px;
+}
+
+table {
+    width: 100%;
+    border-collapse: separate;
+    border-spacing: 0;
+    border-radius: 10px;
+    overflow: hidden;
+}
+
+th, td {
+    padding: 10px;
+    border: 1px solid #ddd;
+    text-align: left;
+}
+
+th {
+    background-color: #eeb868;
+    color: #5d74b8;
+}
+
+tr:nth-child(even) {
+    background-color: #f2f2f2;
+}
+
+tr:hover {
+    background-color: #ddd;
+}
+
+button {
+    padding: 5px 10px;
+    border: none;
+    cursor: pointer;
+    border-radius: 5px;
+}
+
+button:first-child {
+    background-color: #5d74b8;
+    color: white;
+}
+
+button:last-child {
+    background-color: #D9534F;
+    color: white;
+}
+
+td button {
+    display: block;
+    margin: 5px auto;
+}
+
+td button:first-child:hover{
+    color: #5d74b8;
+    background-color: #eeb868;
+
+}
+
+td button:last-child:hover{
+    color: #ff0000;
+    background-color: #fff;
+
+}
+
+footer {
+    background: linear-gradient(to left, #eeb868, #5d74b8);
+    color: white;
+    text-align: center;
+    padding: 15px;
+    width: 100%;
+    margin-top: auto;
+}
