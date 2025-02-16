@@ -120,6 +120,15 @@ Label{
 
 }
 
+input{
+    width: 80%;
+    padding: 10px;
+    Margin-top: 15px;
+    border: 2px solid #c19a6b;
+    border-radius: 5px;
+    font-size: 16px;
+}
+
 input[type="submit"] {
     font-family:Arial, Helvetica, sans-serif;
     text-transform: uppercase;
