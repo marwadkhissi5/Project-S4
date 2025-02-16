@@ -8,16 +8,19 @@ body {
 
 
 header {
-    background: linear-gradient(to right, #5D74B8, #eeb868);
+    background: linear-gradient(to left, #eeb868, #5d74b8);
     color: white;
     display: flex;
     justify-content: space-between;
     align-items: center;
     padding: 20px;
     width: 100%;
+    max-width: 100%;
 }
 
+
 .logo {
+    text-align: center;
     width: 100%;
 }
 
@@ -25,26 +28,36 @@ header {
     font-size: 2em;
     font-weight: bold;
     margin: 0 auto;
+    text-shadow: 1px 2px 3px grey;
+    color: white;
+    Text-align: left;
 }
 
+nav {
+    width: 100%;
+    overflow: hidden;
+    display: flex;
+    justify-content: flex-end;
+}
 
 nav ul {
     list-style: none;
     display: flex;
-    gap: 20px;
-    padding: 0;
+    padding: 0 auto;
+    margin-right: 85px;
 }
 
 nav ul li {
-    display: inline;
+    display: flex;
+
 }
 
 nav ul li a {
     color: white;
     text-decoration: none;
-    font-size: 1.2em;
-    padding: 10px;
+    font-size: 1.1em;
     transition: 0.3s;
+    padding: 10px 15px;
 }
 
 nav ul li a:hover {
@@ -52,7 +65,16 @@ nav ul li a:hover {
     border-radius: 5px;
 }
 
-
+h1 {
+    margin: 0;
+    font-size: 2em;
+    font-weight: bold;
+    text-shadow: 1px 2px 3px grey;
+    font-family: Arial, Helvetica, sans-serif;
+    color: white;
+    text-align: left;
+    white-space: nowrap; /* Empêche le titre de passer à la ligne */
+}
 
 .histoire, .mission, .equipe {
     text-align: center;
