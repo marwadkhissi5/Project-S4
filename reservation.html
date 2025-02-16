@@ -1,0 +1,57 @@
+<html>
+
+<head>
+    <title>Réservation</title>
+    <link rel="stylesheet" type="text/css" href="reservationcss.css">
+</head>
+
+<header>
+        <div class="logo">
+            <h1>Fairy Escapes</h1>
+        </div>
+        <nav>
+            <ul>
+                <li><a href="accueil.html">Accueil</a></li>
+                <li><a href="presentation.html">À Propos de Nous</a></li>
+                <li><a href="connexion.html">Se Connecter</a></li>
+                <li><a href="inscription.html">S'Inscrire</a></li>
+                <li><a href="compte.html">Votre Espace</a></li>
+            </ul>
+        </nav>
+</header>
+
+<div class="container">
+	<div class="rightbox">
+        <div class="search-box">
+            <h1>Voyagez comme une princesse</h1>
+            <form>
+                <div class="date-selection">
+   			<span>DU</span>
+   			<input type="date" id="date_depart" name="date_depart">
+    			<span>AU</span>
+    			<input type="date" id="date_retour" name="date_retour">
+		</div>
+
+                <label for="destination">Destination :</label>
+                <select id="destination" name="destination">
+                    <option value="oman">Jasmine - Oman, Mascate</option>
+                    <option value="chine">Mulan - Chine, Xi'nen</option>
+                    <option value="usa">Pocahontas - États-Unis, Williamsburg</option>
+                </select>
+
+                <label for="personnes">Nombre de personnes :</label>
+                <input type="number" id="personnes" name="personnes" min="1" value="1" required>
+
+                <input type="submit" value="Rechercher">
+            </form>
+        </div>
+	</div>
+</div>	
+
+<footer>
+        <p>&copy; 2025 Fairy Escapes | Contact : info@fairyescapes.com</p>
+</footer>
+
+
+</body>
+</html>
