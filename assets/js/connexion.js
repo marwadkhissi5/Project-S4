@@ -1,1 +1,9 @@
-
+document.getElementById("afficher_p").addEventListener("change",function(){
+    password=document.getElementById("password");
+    if(this.checked){
+        password.type="text";
+    }
+    else{
+        password.type="password";
+    }
+})

@@ -1,0 +1,11 @@
+document.getElementById("modifier_f").addEventListener("submit",function(event){
+    event.preventDefault();
+    document.querySelectorAll("input,select,textarea,button").forEach(function(champ){
+        champ.disabled=true;
+    })
+    setTimeout(function(){
+        document.querySelectorAll("input,select,textarea,button").forEach(function(champ){
+            champ.disabled=false;
+        }) 
+    },3000);
+})
