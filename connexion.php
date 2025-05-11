@@ -1,37 +1,29 @@
 <?php 
-session_start();
-$login = null;
-$mot_de_passe = null;
+	session_start();
+  include 'vues/entete.php';
+  $stylesheets = [];
+  $javascripts = ['connexion.js'];
+?>
+
+<?php include 'vues/recherche.php' ;?>
+<?php 
+
+include 'includes/fcts_donnees.php';
+
+$login=null;
 $erreur = false;
-
-function Connexion($login, $mdp, $utilisateurs){
-  $utilisateur_connecte = null;
-  foreach ($utilisateurs as $utilisateur) {
-      if (($utilisateur['login'] === $login || $utilisateur['email'] === $login) && $utilisateur['mot_de_passe'] === $mdp) {
-          $utilisateur_connecte = $utilisateur;
-          break;
-      }
-  }
-  return $utilisateur_connecte;
-}
-
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
-    $fichier = 'donnees/bd.json';
-    $donnees = file_get_contents($fichier);
-    $utilisateurs = json_decode($donnees, true)['utilisateurs'];
 
     if (isset($_POST['login']) && isset($_POST['password'])){
-        $login = $_POST['login'];
-        $mot_de_passe = $_POST['password'];
-        
-        $utilisateur_connecte=Connexion($login, $mot_de_passe, $utilisateurs);
+        $login=$_POST['login'];
+        $utilisateur_connecte=Connexion($_POST['login'], $_POST['password']);
         if ($utilisateur_connecte) {
             $_SESSION['utilisateur'] = $utilisateur_connecte;
             if($utilisateur_connecte['role']=='admin'){
                 header('Location: admin.php');
             }
             else{
-                header('Location: espace_compte.php');
+                header('Location: profile.php');
             }
         } else {
             $erreur = true;
@@ -40,44 +32,41 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 }
 ?>
 <?php $titre="Authentification "; ?>
-<?php include "vues/entete.php" ?>
-<link rel="stylesheet" type="text/css" href="css/form.css">
+	<div class="section-login bg-clair">
+		<div class="carte-login">
+			<h2>Connexion</h2>
+			<form class="form-login" method="POST">
 
-<section class="bg-fairy">
-    <div class="container">
-        <div class="form-grid">
-          <form class="form" method="POST">
-            <h2 class="form-title">Connexion</h2>
-            <div>
-              <?php if ($erreur) {?>
-                <div class="alert alert-danger" role="alert">
-                    <h4 class="alert-heading">Erreur d'authentification</h4>
-                    <p>
-                        Le nom d'utilisateur ou le mot de passe incorrect.
-                    </p>
-                </div>
-              <?php }?>
-            </div>
-            <div class="form-group">
-              <label for="titre">Nom d'utilisateur ou Email :</label>
-              <input type="text" id="email" name="login" value="<?php echo $login; ?>"/>
-            </div>
+				<?php if (isset($_GET['success'])) {?>
+					<div class="alert alert-primary">
+						✅ L'inscription a été effectuée avec succès !
+					</div>
+				<?php }?>
 
-            <div class="form-group">
-              <label for="titre">Mot de Passe :</label>
-              <input type="password" id="password" name="password" value=""/>
-            </div>
+				<?php if ($erreur) {?>
+					<div class="alert alert-danger" role="alert">
+						<p>
+							Le nom d'utilisateur ou le mot de passe incorrect.
+						</p>
+					</div>
+				<?php }?>
+				<label for="email">Nom d'utilisateur ou adresse e-mail</label>
+				<input type="text" id="email" name="login" placeholder="exemple@email.com" required value="<?php echo $login; ?>" />
+				<span id="email_erreur"></span>
 
-            <div class="form-actions">
-              <button type="submit" class="btn primary">Se connecter</button>
-            </div>
+				<label for="password">Mot de passe</label>
+				<input type="password" id="password" name="password" placeholder="••••••••" required value=""/>
+				<input type="checkbox" id="afficher_p">Afficher mot de passe
+              	<span id="password_erreur"></span>
 
-            <div class="form-group">
-              Toujours pas inscrite ?
-              <a href="inscription.php">Inscrivez-vous</a>
-            </div>
-          </form>
-        </div>
-    </div>
-</section>
-<?php include "vues/pied.php" ?>
+				<button type="submit" class="btn btn-template btn-large">
+					Se connecter
+				</button>
+			</form>
+			<p class="texte-connexion">
+				Pas encore de compte ? <a href="inscription.php">Créer un compte</a>
+			</p>
+		</div>
+	</div>
+
+<?php include 'vues/pied.php' ;?>
