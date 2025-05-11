@@ -1,460 +1,312 @@
 {
-  "utilisateurs": [
-    {
-      "login": "Ahmed",
-      "mot_de_passe": "ahmed123",
-      "role": "normal",
-      "email": "ahmed@gmail.com",
-      "informations": {
-        "nom": "Dupont",
-        "naissance": "1990-01-01",
-        "adresse": "123 Rue Principale, Paris, 75000"
-      },
-      "dates": {
-        "inscription": "2023-01-01",
-        "derniere_connexion": "2023-10-01"
-      },
-      "voyages": {
-        "consultes": [1, 2],
-        "achetes": [1]
-      }
-    },
-    {
-      "login": "Marwa",
-      "mot_de_passe": "marwa123",
-      "role": "admin",
-      "email": "marwa@gmail.com",
-      "informations": {
-        "nom": "Dkhissi",
-        "naissance": "2005-05-12",
-        "adresse": "456 Avenue des Champs, Lyon, 69000"
-      },
-      "dates": {
-        "inscription": "2025-01-15",
-        "derniere_connexion": "2025-03-25"
-      },
-      "voyages": {
-        "consultes": [2, 3],
-        "achetes": [2, 3]
-      }
-    },
-    {
-      "login": "user3",
-      "mot_de_passe": "789",
-      "role": "normal",
-      "email": "user3@gmail.com",
-      "informations": {
-        "nom": "test",
-        "naissance": "2000-03-20",
-        "adresse": "paris"
-      },
-      "dates": {
-        "inscription": "2023-01-01",
-        "derniere_connexion": "2023-10-01"
-      },
-      "voyages": {
-        "consultes": [1, 2, 3],
-        "achetes": [1]
-      }
-    },
-    {
-      "login": "user4",
-      "mot_de_passe": "123",
-      "role": "normal",
-      "email": "user4@gmail.com",
-      "informations": {
-        "nom": "test",
-        "naissance": "1999-03-20",
-        "adresse": "Lille"
-      },
-      "dates": {
-        "inscription": "2023-01-01",
-        "derniere_connexion": "2023-10-01"
-      },
-      "voyages": {
-        "consultes": [3],
-        "achetes": [3]
-      }
-    },
-    {
-      "login": "renoua",
-      "mot_de_passe": "123",
-      "role": "admin",
-      "email": "renoua@gmail.com",
-      "informations": {
-        "nom": "renoua",
-        "naissance": "2006-12-20",
-        "adresse": "Rabat"
-      },
-      "dates": {
-        "inscription": "21-03-2025",
-        "derniere_connexion": null
-      },
-      "voyages": {
-        "consultes": [1, 2, 3],
-        "achetes": [3]
-      }
-    }
-  ],
-
-  "voyages": [
-    {
-      "id": 1,
-      "titre": "Mascate",
-      "img": "https://i.postimg.cc/mgNNPnyS/mascate.jpg",
-      "dates": {
-        "debut": "2025-10-01",
-        "fin": "2025-10-05",
-        "duree": "5 jours"
-      },
-      "liste_etapes": [0, 1],
-      "liste_options": [0, 1],
-      "specificites": "Visite des villes historiques et dégustation de cuisine locale",
-      "liste_personnes": ["user2"],
-      "prix_total": 699.99,
-      "statut": "payé"
-    },
-    {
-      "id": 2,
-      "titre": "Mascate",
-      "img": "https://i.postimg.cc/mgNNPnyS/mascate.jpg",
-      "dates": {
-        "debut": "2025-11-10",
-        "fin": "2025-11-25",
-        "duree": "15 jours"
-      },
-      "liste_etapes": [0, 1],
-      "specificites": "Safari dans le désert et nuit sous les étoiles",
-      "liste_personnes": [],
-      "prix_total": 1229.99,
-      "statut": "disponible"
-    },
-    {
-      "id": 3,
-      "titre": "Mascate",
-      "img": "https://i.postimg.cc/mgNNPnyS/mascate.jpg",
-      "dates": {
-        "debut": "2025-12-20",
-        "fin": "2025-12-27",
-        "duree": "8 jours"
-      },
-      "liste_etapes": [0, 1],
-      "specificites": "Croisière le long de la côte et plongée sous-marine",
-      "liste_personnes": ["user4"],
-      "prix_total": 759.99,
-      "statut": "en cours de modification"
-    },
-    {
-      "id": 4,
-      "titre": "Williamsbourg",
-      "img": "https://i.postimg.cc/VNd1JqBK/williamsbourg.jpg",
-      "dates": {
-        "debut": "2025-10-01",
-        "fin": "2025-10-5",
-        "duree": "5 jours"
-      },
-      "liste_etapes": [2, 4, 5, 1],
-      "specificites": "Exploration du patrimoine colonial et balades en forêt",
-      "liste_personnes": [],
-      "prix_total": 759.99,
-      "statut": "disponible"
-    },
-    {
-      "id": 5,
-      "titre": "Williamsbourg",
-      "img": "https://i.postimg.cc/VNd1JqBK/williamsbourg.jpg",
-      "dates": {
-        "debut": "2025-07-05",
-        "fin": "2025-07-12",
-        "duree": "8 jours"
-      },
-      "liste_etapes": [2, 3],
-      "specificites": "Visite des anciens forts et reconstitutions historiques",
-      "liste_personnes": ["user3"],
-      "prix_total": 2789.99,
-      "statut": "payé"
-    },
-    {
-      "id": 6,
-      "titre": "Williamsbourg",
-      "img": "https://i.postimg.cc/VNd1JqBK/williamsbourg.jpg",
-      "dates": {
-        "debut": "2025-08-10",
-        "fin": "2025-08-20",
-        "duree": "10 jours"
-      },
-      "liste_etapes": [2, 3],
-      "specificites": "Découverte des traditions locales et des spectacles vivants",
-      "liste_personnes": [],
-      "prix_total": 1819.99,
-      "statut": "disponible"
-    },
-    {
-      "id": 7,
-      "titre": "Xi'an",
-      "img": "https://i.postimg.cc/7YGWJKpG/xian.jpg",
-      "dates": {
-        "debut": "2025-05-01",
-        "fin": "2025-05-07",
-        "duree": "7 jours"
-      },
-      "liste_etapes": [4, 5],
-      "specificites": "Visite de l'armée de terre cuite et des temples anciens",
-      "liste_personnes": [],
-      "prix_total": 899.99,
-      "statut": "disponible"
-    },
-    {
-      "id": 8,
-      "titre": "Xi'an",
-      "img": "https://i.postimg.cc/7YGWJKpG/xian.jpg",
-      "dates": {
-        "debut": "2025-06-10",
-        "fin": "2025-06-17",
-        "duree": "8 jours"
-      },
-      "liste_etapes": [4, 5],
-      "specificites": "Randonnée sur la muraille de Xi'an et découverte de la gastronomie locale",
-      "liste_personnes": ["user4"],
-      "prix_total": 1529.99,
-      "statut": "en cours de modification"
-    },
-    {
-      "id": 9,
-      "titre": "Xi'an",
-      "img": "https://i.postimg.cc/7YGWJKpG/xian.jpg",
-      "dates": {
-        "debut": "2025-07-20",
-        "fin": "2025-07-31",
-        "duree": "11 jours"
-      },
-      "liste_etapes": [4, 5],
-      "specificites": "Immersion dans la culture traditionnelle chinoise et cours de calligraphie",
-      "liste_personnes": [],
-      "prix_total": 2259.99,
-      "statut": "disponible"
-    },
-    {
-      "id": 10,
-      "titre": "Mascate",
-      "img": "https://i.postimg.cc/mgNNPnyS/mascate.jpg",
-      "dates": {
-        "debut": "2025-09-10",
-        "fin": "2025-09-15",
-        "duree": "6 jours"
-      },
-      "liste_etapes": [0, 1],
-      "specificites": "Excursion en 4x4 dans les dunes et visite d'un souk traditionnel",
-      "liste_personnes": [],
-      "prix_total": 779.99,
-      "statut": "disponible"
-    },
-    {
-      "id": 11,
-      "titre": "Williamsbourg",
-      "img": "https://i.postimg.cc/VNd1JqBK/williamsbourg.jpg",
-      "dates": {
-        "debut": "2025-08-05",
-        "fin": "2025-08-12",
-        "duree": "8 jours"
-      },
-      "liste_etapes": [2, 4],
-      "specificites": "Parcours immersif sur la vie coloniale et concerts folkloriques",
-      "liste_personnes": ["Ahmed"],
-      "prix_total": 789.99,
-      "statut": "disponible"
-    },
-    {
-      "id": 12,
-      "titre": "Xi'an",
-      "img": "https://i.postimg.cc/7YGWJKpG/xian.jpg",
-      "dates": {
-        "debut": "2025-10-15",
-        "fin": "2025-10-22",
-        "duree": "8 jours"
-      },
-      "liste_etapes": [4, 5],
-      "specificites": "Tour des anciennes fortifications et cérémonie du thé",
-      "liste_personnes": ["user3"],
-      "prix_total": 1319.99,
-      "statut": "en attente de confirmation"
-    },
-    {
-      "id": 13,
-      "titre": "Williamsbourg",
-      "img": "https://i.postimg.cc/VNd1JqBK/williamsbourg.jpg",
-      "dates": {
-        "debut": "2025-11-01",
-        "fin": "2025-11-08",
-        "duree": "8 jours"
-      },
-      "liste_etapes": [2, 3],
-      "specificites": "Découverte de l'histoire amérindienne et artisanat local",
-      "liste_personnes": [],
-      "prix_total": 1799.99,
-      "statut": "en cours de modification"
-    },
-    {
-      "id": 14,
-      "titre": "Xi'an",
-      "img": "https://i.postimg.cc/7YGWJKpG/xian.jpg",
-      "dates": {
-        "debut": "2025-12-01",
-        "fin": "2025-12-10",
-        "duree": "10 jours"
-      },
-      "liste_etapes": [4, 5],
-
-      "specificites": "Marche dans la vieille ville et spectacle d’opéra chinois",
-      "liste_personnes": ["user12"],
-      "prix_total": 939.99,
-      "statut": "payé"
-    },
-    {
-      "id": 15,
-      "titre": "Mascate",
-      "img": "https://i.postimg.cc/mgNNPnyS/mascate.jpg",
-      "dates": {
-        "debut": "2025-07-25",
-        "fin": "2025-07-30",
-        "duree": "6 jours"
-      },
-      "liste_etapes": [0, 1],
-      "specificites": "Snorkeling et observation des dauphins sur la côte",
-      "liste_personnes": [],
-      "prix_total": 1749.99,
-      "statut": "disponible"
-    }
-  ],
-
-  "etapes": [
-    {
-      "id": 0,
-      "titre": "Exploration de Muttrah",
-      "duree": "2 jours",
-      "position": {
-        "gps": "23.6165, 58.5933",
-        "lieu": "Muttrah, Mascate, Oman"
-      },
-      "options": [1, 2],
-      "personnes_supplementaires": []
-    },
-    {
-      "id": 1,
-      "titre": "Plongée à Bandar Khayran",
-      "duree": "4 jours",
-      "position": {
-        "gps": "23.5120, 58.7734",
-        "lieu": "Bandar Khayran, Mascate, Oman"
-      },
-      "options": [1, 2],
-      "personnes_supplementaires": []
-    },
-    {
-      "id": 2,
-      "titre": "Immersion dans la vie coloniale",
-      "duree": "3 jours",
-      "position": {
-        "gps": "37.2707, -76.7075",
-        "lieu": "Williamsburg, Virginie, USA"
-      },
-      "options": [1, 2],
-      "personnes_supplementaires": []
-    },
-    {
-      "id": 4,
-      "titre": "Excursion en nature à Jamestown",
-      "duree": "4 jours",
-      "position": {
-        "gps": "37.2083, -76.7743",
-        "lieu": "Jamestown, Virginie, USA"
-      },
-      "options": [1, 2],
-      "personnes_supplementaires": []
-    },
-    {
-      "id": 5,
-      "titre": "Visite de l'armée de terre cuite",
-      "duree": "2 jours",
-      "position": {
-        "gps": "34.3853, 109.2786",
-        "lieu": "Armée de terre cuite, Xi’an, Chine"
-      },
-      "options": [
-        "Visite guidée",
-        "Musée archéologique",
-        "Déjeuner traditionnel chinois"
-      ],
-      "personnes_supplementaires": []
-    },
-    {
-      "id": 6,
-      "titre": "Dîner et spectacle d'opéra chinois",
-      "duree": "5 jours",
-      "position": {
-        "gps": "34.2600, 108.9423",
-        "lieu": "Théâtre de Xi’an, Chine"
-      },
-      "options": [
-        "Dîner royal",
-        "Spectacle d’opéra traditionnel",
-        "Cours de calligraphie"
-      ],
-      "personnes_supplementaires": []
-    }
-  ],
-
-  "options": [
-    {
-      "id": 1,
-      "titre": "Visite guid\u00e9e",
-      "nombre_personnes": 2,
-      "prix_par_personne": 50
-    },
-    {
-      "id": 2,
-      "titre": "Hebergement luxe",
-      "nombre_personnes": 1,
-      "prix_par_personne": 100
-    }
-  ],
-  "paiements": [
-    {
-      "id": 1,
-      "coordonnees_bancaires": {
-        "numero_carte": "1234567812345678",
-        "date_validite": "2025-12"
-      },
-      "lien_utilisateur": "user1",
-      "lien_voyage": 1,
-      "date_transaction": "2023-10-01"
-    },
-    {
-      "id": 2,
-      "coordonnees_bancaires": {
-        "numero_carte": "8765432187654321",
-        "date_validite": "2024-11"
-      },
-      "lien_utilisateur": "admin1",
-      "lien_voyage": 2,
-      "date_transaction": "2023-10-05"
-    }
-  ],
-  "avis": [
-    {
-      "id": 1,
-      "description": "Service impeccable et voyage inoubliable !",
-      "client": "Renoua"
-    },
-    {
-      "id": 2,
-      "description": "Expérience client remarquable, je recommande vivement !",
-      "client": "Maïssa"
-    },
-    {
-      "id": 3,
-      "description": "Organisation parfaite et offres attractives.",
-      "client": "Marwa"
-    }
-  ]
+    "utilisateurs": [
+        {
+            "login": "Ahmed",
+            "mot_de_passe": "ahmed123", 
+            "role": "normal",
+            "email": "ahmed@gmail.com",
+            "informations": {
+                "nom": "ytgygyugu",
+                "naissance": "1990-01-01",
+                "adresse": "123 Rue Principale, Paris, 75000"
+            },
+            "dates": {
+                "inscription": "2023-01-01",
+                "derniere_connexion": "2023-10-01"
+            },
+            "voyages": {
+                "consultes": [
+                    1,
+                    2
+                ],
+                "achetes": [
+                    1
+                ]
+            },
+            "naissance": "1990-01-01",
+            "nom": "ahmed"
+        },
+        {
+            "login": "Marwa",
+            "mot_de_passe": "marwa123",
+            "role": "admin",
+            "email": "marwa@gmail.com",
+            "informations": {
+                "nom": "Dkhissi",
+                "naissance": "2005-05-12",
+                "adresse": "456 Avenue des Champs, Lyon, 69000"
+            },
+            "dates": {
+                "inscription": "2025-01-15",
+                "derniere_connexion": "2025-03-25"
+            },
+            "voyages": {
+                "consultes": [
+                    2,
+                    3
+                ],
+                "achetes": [
+                    2,
+                    3
+                ]
+            }
+        },
+        {
+            "login": "Renoua",
+            "mot_de_passe": "123",
+            "role": "admin",
+            "email": "renoua@gmail.com",
+            "informations": {
+                "nom": "Fassi Fehri",
+                "naissance": "2006-12-20",
+                "adresse": "Rabat"
+            },
+            "dates": {
+                "inscription": "21-03-2025",
+                "derniere_connexion": null
+            },
+            "voyages": {
+                "consultes": [
+                    1,
+                    2,
+                    3
+                ],
+                "achetes": [
+                    3
+                ]
+            }
+        },
+        {
+            "login": "Test1",
+            "mot_de_passe": "test1234",
+            "role": "normal",
+            "email": "test@gmail.com",
+            "informations": {
+                "nom": "test",
+                "naissance": "2005-12-27",
+                "adresse": "1234"
+            },
+            "dates": {
+                "inscription": "03-05-2025",
+                "derniere_connexion": null
+            },
+            "voyages": {
+                "consultes": [],
+                "achetes": []
+            }
+        }
+    ],
+    "voyages": [
+        {
+            "id": 1,
+            "titre": "Mascate",
+            "img": "https:\/\/i.postimg.cc\/mgNNPnyS\/mascate.jpg",
+            "dates": {
+                "debut": "2025-10-01",
+                "fin": "2025-10-05",
+                "duree": "5"
+            },
+            "liste_etapes": [
+                0,
+                1
+            ],
+            "liste_options": [
+                1,
+                2
+            ],
+            "specificites": "Visite des villes historiques et d\u00e9gustation de cuisine locale",
+            "liste_personnes": [
+                "user2"
+            ],
+            "prix_total": 699.990000000000009094947017729282379150390625,
+            "statut": "pay\u00e9"
+        },
+        {
+            "id": 2,
+            "titre": "Williamsbourg",
+            "img": "https:\/\/i.postimg.cc\/VNd1JqBK\/williamsbourg.jpg",
+            "dates": {
+                "debut": "2025-10-01",
+                "fin": "2025-10-5",
+                "duree": "5"
+            },
+            "liste_etapes": [
+                2,
+                3
+            ],
+            "liste_options": [
+                1,
+                2
+            ],
+            "specificites": "Exploration du patrimoine colonial et balades en for\u00eat",
+            "liste_personnes": [],
+            "prix_total": 759.990000000000009094947017729282379150390625,
+            "statut": "disponible"
+        },
+        {
+            "id": 3,
+            "titre": "Xi'an",
+            "img": "https:\/\/i.postimg.cc\/7YGWJKpG\/xian.jpg",
+            "dates": {
+                "debut": "2025-05-01",
+                "fin": "2025-05-07",
+                "duree": "7"
+            },
+            "liste_etapes": [
+                4,
+                5
+            ],
+            "liste_options": [
+                1,
+                2
+            ],
+            "specificites": "Visite de l'arm\u00e9e de terre cuite et des temples anciens",
+            "liste_personnes": [],
+            "prix_total": 899.990000000000009094947017729282379150390625,
+            "statut": "disponible"
+        }
+    ],
+    "etapes": [
+        {
+            "id": 0,
+            "titre": "Exploration de Muttrah",
+            "duree": "2",
+            "position": {
+                "gps": "23.6165, 58.5933",
+                "lieu": "Muttrah, Mascate, Oman"
+            },
+            "options": [
+                "Visite guid\u00e9e",
+                "Mus\u00e9e arch\u00e9ologique"
+            ],
+            "personnes_supplementaires": []
+        },
+        {
+            "id": 1,
+            "titre": "Plong\u00e9e sous marine",
+            "duree": "3",
+            "position": {
+                "gps": "23.5120, 58.7734",
+                "lieu": "Mascate, Oman"
+            },
+            "options": [
+                "Excursion de plong\u00e9e en apn\u00e9e dans les \u00eeles Daymaniat",
+                "Excursion en bateau pour observer les dauphins"
+            ],
+            "personnes_supplementaires": []
+        },
+        {
+            "id": 2,
+            "titre": "Immersion dans la vie coloniale",
+            "duree": "3",
+            "position": {
+                "gps": "37.2707, -76.7075",
+                "lieu": "Williamsburg, Virginie, USA"
+            },
+            "options": [
+                "Visite guid\u00e9e",
+                "Mus\u00e9e arch\u00e9ologique"
+            ],
+            "personnes_supplementaires": []
+        },
+        {
+            "id": 3,
+            "titre": "Excursion en nature \u00e0 Jamestown",
+            "duree": "4",
+            "position": {
+                "gps": "37.2083, -76.7743",
+                "lieu": "Jamestown, Virginie, USA"
+            },
+            "options": [
+                "Visite guid\u00e9e"
+            ],
+            "personnes_supplementaires": []
+        },
+        {
+            "id": 4,
+            "titre": "Visite de l'arm\u00e9e de terre cuite",
+            "duree": "2 jours",
+            "position": {
+                "gps": "34.3853, 109.2786",
+                "lieu": "Arm\u00e9e de terre cuite, Xi\u2019an, Chine"
+            },
+            "options": [
+                "Visite guid\u00e9e",
+                "Mus\u00e9e arch\u00e9ologique",
+                "D\u00e9jeuner traditionnel chinois"
+            ],
+            "personnes_supplementaires": []
+        },
+        {
+            "id": 5,
+            "titre": "D\u00eener et spectacle d'op\u00e9ra chinois",
+            "duree": "5",
+            "position": {
+                "gps": "34.2600, 108.9423",
+                "lieu": "Th\u00e9\u00e2tre de Xi\u2019an, Chine"
+            },
+            "options": [
+                "D\u00eener royal",
+                "Spectacle d\u2019op\u00e9ra traditionnel",
+                "Cours de calligraphie"
+            ],
+            "personnes_supplementaires": []
+        }
+    ],
+    "options": [
+        {
+            "id": 1,
+            "titre": "Hebergement normal",
+            "nombre_personnes": 2,
+            "prix_par_personne": 50
+        },
+        {
+            "id": 2,
+            "titre": "Hebergement luxe",
+            "nombre_personnes": 1,
+            "prix_par_personne": 100
+        }
+    ],
+    "paiements": [
+        {
+            "id": 1,
+            "coordonnees_bancaires": {
+                "numero_carte": "1234567812345678",
+                "date_validite": "2025-12"
+            },
+            "lien_utilisateur": "user1",
+            "lien_voyage": 1,
+            "date_transaction": "2023-10-01"
+        },
+        {
+            "id": 2,
+            "coordonnees_bancaires": {
+                "numero_carte": "8765432187654321",
+                "date_validite": "2024-11"
+            },
+            "lien_utilisateur": "admin1",
+            "lien_voyage": 2,
+            "date_transaction": "2023-10-05"
+        }
+    ],
+    "avis": [
+        {
+            "id": 1,
+            "note": "\u2605\u2605\u2605\u2605\u2605",
+            "description": "Service impeccable et voyage inoubliable !",
+            "client": "Renoua"
+        },
+        {
+            "id": 2,
+            "note": "\u2605\u2605\u2605\u2605\u2606",
+            "description": "Exp\u00e9rience client remarquable, je recommande vivement !",
+            "client": "Ma\u00efssa"
+        },
+        {
+            "id": 3,
+            "note": "\u2605\u2605\u2605\u2605\u2605",
+            "description": "Organisation parfaite et offres attractives.",
+            "client": "Marwa"
+        }
+    ]
 }
