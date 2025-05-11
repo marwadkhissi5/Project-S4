@@ -1,116 +1,134 @@
-<?php
-session_start();
-// Vérification de l'existence du fichier JSON
-$fichier = 'donnees/bd.json';
-$voyages = [];
-
-$donnees = file_get_contents($fichier);
-$decoded_data = json_decode($donnees, true);
-$voyages = $decoded_data['voyages'];
-
-function recherche_voyage($donnees,$id){
-    $resultat=array_filter($donnees, function($vg) use ($id){
-        return $vg['id']==$id;
-    });
-    return array_values($resultat)[0];
-}
-
-function recherche_etapes($etapes, $liste){
-    $res=[];
-    foreach ($liste as $id) {
-        $resultat=array_filter($etapes, function($etape) use ($id){
-            return $etape['id']==$id;
-        });
-        if(!empty($resultat)){
-            $res[]=array_values($resultat)[0];
-        }
-    }
-    
-    return $res;
-}
-
-function recherche_options($options, $liste){
-    $res=[];
-    foreach ($liste as $id) {
-        $resultat=array_filter($options, function($option) use ($id){
-            return $option['id']==$id;
-        });
-        if(!empty($resultat)){
-            $res[]=array_values($resultat)[0];
-        }
-    }
-    
-    return $res;
-}
-
-$voyage=null;
-$etapes=[];
-if(isset($_GET['id'])){
-    $voyage=recherche_voyage($voyages, $_GET['id']);
-    $etapes=recherche_etapes($decoded_data['etapes'], $voyage['liste_etapes']);
-}
-else{
-    header('Location: voyages.php');
-}
+<?php 
+    session_start();
+    include 'vues/entete.php';
+    $stylesheets = [];
+    $javascripts = ["reservation.js"];
 ?>
 
+<?php include 'vues/recherche.php' ;?>
 <?php
     if(!isset($_SESSION['utilisateur'])){
-        header('Location: voyages.php');
+        header("Location: voyages.php");
+    }
+    if(!isset($_GET['id'])){
+        header("Location: voyages.php");
+    }
+    include 'includes/fcts_donnees.php';
+    $voyage=rechercher_voyage($_GET['id']);
+    if(!isset($voyage)){
+        header("Location: voyages.php");
     }
 ?>
 
-<?php $titre="Voyage  : ".$voyage['titre']; ?>
-<?php include "vues/entete.php" ?>
-<link rel="stylesheet" type="text/css" href="css/form.css">
+    <section class="section-contenu bg-claire">
+      <div class="conteneur">
+        <div class="row">
+          <div class="col-9">
+            <div class="conteneur">
+              <h1 class="titre-principal"><?php echo $voyage['titre']; ?></h1>
 
-<section class="bg-fairy">
-    <div class="container">
-        <div class="voyage-card">
-            <div class="voyage-header" style="background-image: url('<?php echo $voyage['img'];?>')">
-                <div class="voyage-overlay">
-                <h2 class="voyage-title"><?php echo $voyage['titre'];?></h2>
+              <div class="carte-voyage-detaillee">
+                <div class="bloc-contenu">
+                  <h3 class="titre-voyage"><?php echo $voyage['titre']; ?></h3>
+                  <div class="infos-voyage">
+                    <div class="info-item">
+                      <span class="icon">📅</span>
+                      <span
+                        >Du <?php echo $voyage['dates']['debut']; ?> à <?php echo $voyage['dates']['fin']; ?><strong> - <?php echo $voyage['dates']['duree']; ?> jours</strong></span
+                      >
+                    </div>
+                    <div class="info-item">
+                      <span class="icon">📝</span>
+                      <span
+                        ><?php echo $voyage['specificites']; ?>
+                      </span>
+                    </div>
+                    <div class="info-item">
+                      <span class="icon">💰</span>
+                      <span>Prix : <strong><?php echo $voyage['prix_total']; ?>&euro;</strong></span>
+                    </div>
+                  </div>
                 </div>
+              </div> 
+              <h3 class="titre bg-template">Étapes du voyage</h3>
+              <?php  
+                $etapes=liste_etapes($voyage['liste_etapes']);
+                $options=[];
+
+              ?>
+              <ul class="liste-etapes">
+                <?php 
+                  foreach($etapes as $etape){
+                    ?>
+                    <li>
+                      <h3><?php echo $etape['titre'];?></h3>
+                      <p>Lieu : <?php echo $etape['position']['lieu'];?></p>
+                      <p>Durée : <?php echo $etape['duree'];?> jours</p>
+                      <p>Description : <?php 
+                        foreach($etape['options'] as $option){
+                          echo $option." | "; 
+                        }
+                      }?></p>
+                    </li>
+                </ul>
+              
+              <h3 class="titre bg-template">Choisissez vos options</h3>
+
+              <form id="form-options" class="form-options" method="POST" action="recapitulatif.php">
+                <input type="hidden" name="voyage" value="<?php echo $voyage['id']; ?>" />
+                <input type="hidden" id="nb_p" name="nb_personne" value="1"/>
+                <?php 
+                    $options=liste_options($voyage['liste_options']);
+
+                    foreach($options as $option){ ?>
+                        <div class="option-item">
+                        <label>
+                            <input
+                            type="checkbox"
+                            value="<?php echo $option['id']; ?>"
+                            name="options[]"
+                            data-id="<?php echo $option['id'] ?>"
+                            data-prix="<?php echo $option['prix_par_personne'] ?>"
+                            data-nb="<?php echo $option['nombre_personnes'] ?>"
+                            />
+                            
+                            <?php echo $option['titre'] ?> – <?php echo $option['prix_par_personne'] ?> &euro; / personne
+                        </label>
+                        <span class="option-detail">Inclut <?php echo $option['nombre_personnes'] ?> personne(s)</span>
+                        </div>
+                    <?php } ?>
+                <input type="submit" class="btn btn-template" value="Ajouter au panier">
+              </form>
+              <br />
             </div>
-            
-            <div class="voyage-body">
-                <div class="voyage-dates">
-                <div class="date-item">
-                    <span class="date-label">Départ</span>
-                    <span class="date-value"><?php echo $voyage['dates']['debut']; ?></span>
-                </div>
-                <div class="date-item">
-                    <span class="date-label">Retour</span>
-                    <span class="date-value"><?php echo $voyage['dates']['fin']; ?></span>
-                </div>
-                </div>
-                
-                <div class="voyage-highlights">
-                    <h3>Spécificités du voyage</h3>
-                    <p><?php echo $voyage['specificites']; ?></p>
-                </div>
+          </div>
+          <aside class="col-3">
+            <div class="carte-recap">
+              <h3><?php echo $voyage['titre']; ?></h3>
+              <p>📅 Du <?php echo $voyage['dates']['debut']; ?> au <?php echo $voyage['dates']['fin']; ?> – <?php echo $voyage['dates']['duree']; ?> jours</p>
+              <p>💰 Prix de base : <strong><?php echo $voyage['prix_total']; ?>&euro;</strong></p>
+              <input type="hidden" id="prix_init" value="<?php echo $voyage['prix_total']; ?>">
+              <label for="nb-personnes"
+                ><strong>👥 Nombre de personnes :</strong></label
+              >
+              <input
+                type="number"
+                id="nb_personnes"
+                value="1"
+                min="1"
+                style="width: 60px; margin-left: 10px"
+              />
+              <hr />
+              <p>🧩 Options :</p>
+              <ul id="liste-options">
+              </ul>
+              <hr />
+              <p>
+                <strong>Total :</strong> <span id="total_prix"><?php echo $voyage['prix_total']; ?>&euro;</span>
+              </p>
             </div>
+          </aside>
         </div>
-    </div>
-    <div class="container">
-        <div>
-            <form action="recapitulatif.php" class="form" method="POST">
-            <input type="hidden" name="voyage" value="<?php echo $voyage['id'];?>">
-            <h3>Etapes :</h3>
-            <?php 
-            foreach ($etapes as $etape) {
-                    echo '<label class="form-label">Etape '.$etape['id'].' : '.$etape['titre'].'</label>';
-                    echo '<label class="form-label">Durée : '.$etape['duree'].'</label>';
-                    $options=recherche_options($decoded_data['options'], $etape['options']);
-                    foreach ($options as $option) {
-                    echo '<input type="checkbox" name="options'.$etape['id'].'[]" value="'.$option["id"].'"> '.$option['titre'];
-                    echo '<br>';
-                    }
-            }
-            ?>
-            <input type='submit' class="btn" value="Confirmer la réservation">
-            </form>
-        </div>
-    </div>
-</section>
-<?php include "vues/pied.php" ?>
+      </div>
+    </section>
+<?php include 'vues/pied.php' ;?>
