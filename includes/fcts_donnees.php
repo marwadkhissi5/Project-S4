@@ -107,7 +107,25 @@
         return $utilisateur;
       }
 
+
+    function SupprimerUtilisateur($login){
+        global $bd, $fichier;
+        $res=array_filter($bd['utilisateurs'], fn($v) => $v['login'] != $login);
+        $bd['utilisateurs']=$res;
+        file_put_contents($fichier, json_encode($bd, JSON_PRETTY_PRINT));
+    }
+
+    function voyage_consulte($vg, $utilisateur){
+        global $bd, $fichier;
+        foreach ($bd['utilisateurs'] as &$user) {
+            if ($user['login']==$utilisateur['login']){
+                if (!in_array($vg, $user['voyages']['consultes'])) {
+                    $user['voyages']['consultes'][]=$vg;
+                    $_SESSION['utilisateur']=$user;
+                }
+                break;
+            }
+        }
+        file_put_contents($fichier, json_encode($bd, JSON_PRETTY_PRINT));
+    }
 ?>
-
-
-
