@@ -36,13 +36,13 @@
     
             // Filtrage par nombre de jours
             if (!empty($nb_jours)) {
-                if($nb_jour=="1" && $voyage['dates']['duree'] > 3)
+                if($nb_jours=="1" && $voyage['dates']['duree'] > 3)
                     $ajouter = false;
-                else if($nb_jour=="2" && ($voyage['dates']['duree'] < 4 || $voyage['dates']['duree'] > 7))
+                else if($nb_jours=="2" && ($voyage['dates']['duree'] < 4 || $voyage['dates']['duree'] > 7))
                     $ajouter = false;
-                else if($nb_jour=="3" && ($voyage['dates']['duree'] < 8 || $voyage['dates']['duree'] > 14))
+                else if($nb_jours=="3" && ($voyage['dates']['duree'] < 8 || $voyage['dates']['duree'] > 14))
                     $ajouter = false;
-                else if($nb_jour=="4" && ($voyage['dates']['duree'] < 15))
+                else if($nb_jours=="4" && ($voyage['dates']['duree'] < 15))
                     $ajouter = false;
             }
     
@@ -103,7 +103,7 @@
               <div class="infos-voyage">
                 <div class="info-item">
                   <span class="icon">📅</span>
-                  <span>Du <?php echo $voyage['dates']['debut']; ?> à <?php echo $voyage['dates']['fin']; ?>  – <strong><?php echo $voyage['dates']['duree']; ?></strong></span>
+                  <span>Du <?php echo $voyage['dates']['debut']; ?> à <?php echo $voyage['dates']['fin']; ?>  – <strong><?php echo $voyage['dates']['duree']; ?> jours</strong></span>
                 </div>
                 <div class="info-item">
                   <span class="icon">📝</span>
@@ -123,21 +123,6 @@
         }
 
       ?>
-
-      <div class="pagination">
-        <?php 
-            echo '<a href="recherche.php?page='.($page-1).'" class="pagination-item">&laquo;</a>';
-            for ($i=1; $i <= $nombre_tot_page; $i++) { 
-                if ($page==$i){
-                    echo '<a href="recherche.php?page='.$i.'" class="pagination-item active">'.$i.'</a>';
-                }
-                else{
-                    echo '<a href="recherche.php?page='.$i.'" class="pagination-item">'.$i.'</a>';
-                }
-            }
-            echo '<a href="recherche.php?page='.($page+1).'" class="pagination-item">&raquo;</a>'
-        ?>
-      </div>
     </div>
   </section>
 

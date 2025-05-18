@@ -15,17 +15,14 @@
 
         <div class="groupe-tri">
           <button class="btn-tri" data-tri="date" data-order="asc">📅 Date de début</button>
-          <button class="btn-order" data-order="asc">↑</button>
         </div>
 
         <div class="groupe-tri">
           <button class="btn-tri" data-tri="prix" data-order="asc">💰 Prix</button>
-          <button class="btn-order" data-order="asc">↑</button>
         </div>
 
         <div class="groupe-tri">
           <button class="btn-tri" data-tri="etapes" data-order="asc">🧭 Durée</button>
-          <button class="btn-order" data-order="asc">↑</button>
         </div>
       </div>
       <div id="liste_voyages">

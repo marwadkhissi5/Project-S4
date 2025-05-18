@@ -4,7 +4,7 @@ include 'includes/fcts_donnees.php';
 include 'vues/entete.php';
 
 $stylesheets = [];
-$javascripts = [];
+$javascripts = ["admin.js"];
 
 if (!isset($_SESSION['utilisateur']) || $_SESSION['utilisateur']['role'] !== 'admin') {
     header("Location: index.php");
@@ -41,7 +41,7 @@ if (!isset($_SESSION['utilisateur']) || $_SESSION['utilisateur']['role'] !== 'ad
               </thead>
             <tbody>
                 <?php foreach (array_slice($utilisateurs, $debutp, $nb_par_page) as $utilisateurs): ?>
-                    <tr>
+                    <tr id="<?php echo $utilisateurs['login'];?>">
                         <td><?php echo $utilisateurs['login'];?></td>
                         <td><?php echo $utilisateurs['informations']['nom'];?></td>
                         <td><?php echo $utilisateurs['email'];?></td>
@@ -51,7 +51,7 @@ if (!isset($_SESSION['utilisateur']) || $_SESSION['utilisateur']['role'] !== 'ad
                         <td><?php echo $utilisateurs['informations']['adresse']?></td>
                         <td class="actions">
                             <a href="modifier_utilisateur.php?id=<?php echo $utilisateurs['login'];?>" class="btn-edit">✏️</a>
-                            <button class="btn-delete">🗑</button>
+                            <button class="btn-delete" data-user="<?php echo $utilisateurs['login'];?>">🗑</button>
                         </td>
                     </tr>
                 <?php endforeach; ?>

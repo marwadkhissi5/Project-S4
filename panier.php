@@ -2,7 +2,7 @@
     session_start();
     include 'vues/entete.php';
     $stylesheets = [];
-    $javascripts = [];
+    $javascripts = ['panier.js'];
 ?>
 
 <?php include 'vues/recherche.php' ;?>
@@ -17,15 +17,17 @@
         if(isset($_SESSION['panier'])){
           foreach($_SESSION['panier'] as $voyage){
             $prix_total+=$voyage['prix'];
-            ?><div class="carte-panier">
+            ?><div class="carte-panier" id="res-<?php echo $voyage['voyage']['id'];?>">
                 <div class="info-voyage">
                   <h3><?php echo $voyage['voyage']['titre']; ?></h3>
                   <p>📅 Du <?php echo $voyage['voyage']['dates']['debut']; ?> au <?php echo $voyage['voyage']['dates']['fin']; ?> – <?php echo $voyage['voyage']['dates']['duree']; ?> jours</p>
+                  <p>Nombre de personnes : <?php echo $voyage['nbpersonnes']; ?></p>
                   <p>💰 <?php echo $voyage['prix']; ?> &euro;</p>
+                  
                 </div>
-                <button class="btn btn-danger btn-small">🗑 Retirer</button>
-            </div>
-
+                <button class="btn btn-danger btn-small btn-supp" data-id="<?php echo $voyage['voyage']['id'];?>">🗑 Retirer</button>
+              </div>
+          </div>
          <?php }
         }
       ?>
@@ -43,7 +45,7 @@
     ?>
 
     <div class="total-panier">
-      <p><strong>Total :</strong> <span class="prix-total"><?php echo $prix_total; ?> &euro;</span></p>
+      <p><strong>Total :</strong> <span class="prix-total"><?php echo $prix_total; ?></span>&euro;</p>
       <form action='https://www.plateforme-smc.fr/cybank/index.php'method='POST'>
         <input type='hidden' name='transaction'
         value='154632ABCD'>
@@ -51,7 +53,7 @@
         <input type='hidden' name='vendeur' value='<?php echo $vendeur; ?>'>
         <input type='hidden' name='retour' value='<?php echo $retour; ?>'>
         <input type='hidden' name='control' value='<?php echo $controle; ?>'>
-        <input type='submit' value="Valider et payer" class="btn btn-template btn-large">
+        <input type='submit' value="Valider et payer" class="btn btn-template btn-large btn-valider">
       </form>
     </div>
   </div>

@@ -5,7 +5,7 @@
     $javascripts = ["reservation.js"];
 ?>
 
-<?php include 'vues/recherche.php' ;?>
+<?php include 'vues/recherche.php' ;?> 
 <?php
     if(!isset($_SESSION['utilisateur'])){
         header("Location: voyages.php");
@@ -17,6 +17,23 @@
     $voyage=rechercher_voyage($_GET['id']);
     if(!isset($voyage)){
         header("Location: voyages.php");
+    }
+    $vg=["voyage"=>$voyage,"options"=>[],"prix"=>0 , "nbpersonnes"=>1]; //Crée une réservation initale
+    voyage_consulte($voyage['id'], $_SESSION['utilisateur']); // Ajoute dans "voyages consultés"
+    if(isset($_SESSION['panier'])){ //Ajoute voyage dans le panier s'il n'existe pas déjà
+      $etat=false;
+      foreach($_SESSION['panier'] as $voy){ 
+        if($voy['voyage']['id']==$voyage['id']){ 
+          $etat=true;
+          break;
+        }
+      }
+      if(!$etat){
+        $_SESSION['panier'][]=$vg;
+      }
+    }
+    else{
+      $_SESSION['panier']=[$vg]; 
     }
 ?>
 
@@ -75,8 +92,8 @@
               <h3 class="titre bg-template">Choisissez vos options</h3>
 
               <form id="form-options" class="form-options" method="POST" action="recapitulatif.php">
-                <input type="hidden" name="voyage" value="<?php echo $voyage['id']; ?>" />
-                <input type="hidden" id="nb_p" name="nb_personne" value="1"/>
+                <input type="hidden" name="voyage" id="voyage" value="<?php echo $voyage['id']; ?>" />
+                <input type="hidden" id="nb_p" name="nb_personne"value="1"/>
                 <?php 
                     $options=liste_options($voyage['liste_options']);
 

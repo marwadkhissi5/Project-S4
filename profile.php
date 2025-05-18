@@ -12,38 +12,6 @@ if(!isset($_SESSION["utilisateur"])){
 $utilisateur=$_SESSION["utilisateur"];
 $voyages=liste_voyages($utilisateur['voyages']['achetes']);
 
-if ($_SERVER["REQUEST_METHOD"] == "POST") {
-    // Récupérer les valeurs soumises
-    $valeurs = [
-        'nom' => $_POST['nom'],
-        'email' => $_POST['email'],
-        'naissance' => $_POST['naissance'],
-    ];
-
-    // Vérification de l'existence du login et de l'email
-    $email_existe = false;
-
-	$user=rechercher_email($valeurs['email']);
-	if($user && ($utilisateur['login']!=$user['login'])){
-		$email_existe = true;
-	}
-
-	if(!$email_existe){
-
-		foreach ($bd['utilisateurs'] as &$user) {
-			if ($user['login'] === $utilisateur['login']) {
-				$user['email'] = $valeurs['email'];
-				$user['informations']['naissance'] = $valeurs['naissance'];
-				$user['informations']['nom'] = $valeurs['nom'];
-				$utilisateur=$user;
-				break;
-			}
-		}
-		// Sauvegarder les modifications dans le fichier JSON
-		file_put_contents($fichier, json_encode($bd, JSON_PRETTY_PRINT));
-	}
-}
-
 ?>
 
 <?php include 'vues/recherche.php' ;?>
@@ -57,16 +25,17 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 						
 								<!-- Affichage normal -->
 								<div class="infos-utilisateur" id="infos-actuelles">
-										<p><strong>Nom : </strong><?php echo $utilisateur['informations']['nom']; ?></p>
+										<p><strong>Nom : </strong><span id="label_nom"><?php echo $utilisateur['informations']['nom']; ?></span></p>
 										<p><strong>Login : </strong><?php echo $utilisateur['login']; ?></p>
-										<p><strong>Email : </strong><?php echo $utilisateur['email']; ?></p>
-										<p><strong>Date de naissance : </strong><?php echo $utilisateur['informations']['naissance']; ?></p>
-										<p><strong>Adresse :</strong><?php echo $utilisateur['informations']['adresse']; ?></p>
+										<p><strong>Email : </strong><span id="label_email"><?php echo $utilisateur['email']; ?></span></p>
+										<p><strong>Date de naissance : </strong><span id="label_naissance"><?php echo $utilisateur['informations']['naissance']; ?></span></p>
+										<p><strong>Adresse :</strong><span id="label_adresse"><?php echo $utilisateur['informations']['adresse']; ?></span></p>
 										<button class="btn btn-template btn-small" onclick="afficherForm()">Modifier mes informations</button>
 								</div>
 						
 								<!-- Formulaire de modification (caché au départ) -->
 								<form class="form-modification" id="form-modif" style="display: none;" method="POST">
+									<input type="hidden" id="login" value="<?php echo $utilisateur['login']; ?>"/>
 										<label for="nom">Nom</label>
 										<input type="text" id="nom" name="nom" value="<?php echo $utilisateur['informations']['nom']; ?>" required />
 						
@@ -94,11 +63,14 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 									<h2>Mes voyages réservés</h2>
 
 									<div class="voyages-reserves">
-										<?php foreach($voyages as $voyage){ ?>
+										<?php foreach($utilisateur['voyages']['achetes'] as $reservation){ 
+												$voyage=rechercher_voyage($reservation[0]);
+											?>
 											<div class="voyage-reserve">
 												<h3><?php echo $voyage['titre']; ?></h3>
 												<p>📅 Du <?php echo $voyage['dates']['debut']; ?> au <?php echo $voyage['dates']['fin']; ?> – <?php echo $voyage['dates']['duree']; ?> jours</p>
-												<p>💰 Prix de base : <strong><?php echo $voyage['prix_total']; ?> &euro;</strong></p>
+												<p>Nombre de personnes : <strong><?php echo $reservation[3]; ?></strong></p>
+												<p>💰 Prix total : <strong><?php echo $reservation[2]; ?> &euro;</strong></p>
 											</div>
 										<?php } ?>
 									</div>
