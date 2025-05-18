@@ -8,6 +8,7 @@
   <link rel="stylesheet" href="assets/css/couleur.css" />
   <link rel="stylesheet" href="assets/css/main.css" />
   <link rel="stylesheet" href="assets/css/elements.css" />
+  <script src="assets/js/jquery-3.7.1.min.js"></script>
 </head>
 
 <body>
