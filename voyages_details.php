@@ -72,7 +72,13 @@
                 ?>
               </ul>
               <br />
-              <a href="reservation.php?id=<?php echo $voyage['id'] ?>" class="btn btn-template">Réserver ce voyage</a>
+              <?php if(isset($_SESSION['utilisateur'])){?>
+                <a href="reservation.php?id=<?php echo $voyage['id'] ?>" class="btn btn-template">Réserver ce voyage</a>
+              <?php }else {?>
+                <div class="alert alert-danger">
+                  Vous devez vous <a href="connexion.php">connecter</a> à votre compte ou en <a href="inscription.php">créer un</a> pour réserver ce voyage
+                </div>
+              <?php }?>
             </div>
     </section>
 <?php include 'vues/pied.php' ;?>
