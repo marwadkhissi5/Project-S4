@@ -7,7 +7,7 @@ document.addEventListener("DOMContentLoaded", function () {
   function getValeur(carte, critere) {
     if (critere === "date") {
       const dateTexte = carte.querySelector(".info-item:nth-child(1)").textContent;
-      const match = dateTexte.match(/Du\s+(\d{4}-\d{2}-\d{2})/);
+      const match = dateTexte.match(/Du\s+(\d{4}-\d{2}-\d{2})/); 
       return match ? new Date(match[1]).getTime() : 0;
     }
 
@@ -32,7 +32,7 @@ document.addEventListener("DOMContentLoaded", function () {
 
       dernierCritere = critere;
 
-      const voyages = voyagesOriginaux.slice();
+      const voyages = voyagesOriginaux.slice(); 
       voyages.sort((a, b) => getValeur(a, critere) - getValeur(b, critere));
       voyages.forEach(v => conteneur.appendChild(v));
 

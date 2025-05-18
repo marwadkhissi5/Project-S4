@@ -1,61 +1,85 @@
-const b_prix=document.getElementById("total_prix");
-const b_checked=document.querySelectorAll("input[name='options[]']");
-const b_personne=document.getElementById("nb_personnes");
-const liste_options=document.getElementById("liste-options");
-let options=[];
+const b_prix = document.getElementById("total_prix");
+const b_checked = document.querySelectorAll("input[name='options[]']"); 
+const b_personne = document.getElementById("nb_personnes");
 
-function ListeOptions() {
-    liste_options.innerHTML = "";
-    b_checked.forEach(opt => {
-        if (opt.checked) {
-            const li = document.createElement("li");
-            li.textContent = opt.parentElement.textContent.trim().split("–")[0];
-            liste_options.appendChild(li);
-        }
+function updateOptions(options) {
+  if (options.length > 0) {
+    $("#liste-options").html("");
+    $.each(options, function (index, opt) {
+      $("#liste-options").append("<li>" + opt.titre + "</li>");
     });
+  }
 }
-
-b_checked.forEach(box=>{
-    box.addEventListener("change",function(){
-        const nb_personne=parseInt(b_personne.value);
-
-        if(this.checked){
-            let p_final=parseFloat(b_prix.textContent)+parseFloat(box.dataset.prix);
-            if (nb_personne > parseInt(box.dataset.nb)){
-                p_final+=(nb_personne-parseInt(box.dataset.nb))*parseFloat(box.dataset.prix);
-                
+$(document).ready(function () {
+  b_checked.forEach((box) => {
+    box.addEventListener("change", function () {
+      let id = $("#voyage").val(); //id voyage
+      let opt = $(this).data("id"); //id option
+      let nbp = $("#nb_personnes").val(); // id nb personnes
+      if (this.checked) { // Si option choisie
+        $.ajax({
+          url: "demandes.php",
+          type: "POST",
+          dataType: "json",
+          data: {
+            type: 1,
+            voyage: id,
+            option: opt,
+            nbpersonnes: nbp,
+          },
+          success: function (reponse) { // Reçoit une reponse valide
+            if (reponse.etat == "ok") {
+              $("#total_prix").html(reponse.reservation.prix + " &euro;"); // Mets à jour le prix
+              updateOptions(reponse.reservation.options); // Mets à jour les options
+            } else {
+              alert("Erreur d'ajout");
             }
-            b_prix.textContent=p_final;
-            ListeOptions();
-        }
-        else{
-            let p_final=parseFloat(b_prix.textContent)-parseFloat(box.dataset.prix);
-            if (nb_personne > parseInt(box.dataset.nb)){
-                p_final-=(nb_personne-parseInt(box.dataset.nb))*parseFloat(box.dataset.prix);
+          },
+        });
+      } else { // Si option supprimée
+        $.ajax({
+          url: "demandes.php",
+          type: "POST",
+          dataType: "json",
+          data: {
+            type: 2, // Supprimer l'option
+            voyage: id,
+            option: opt,
+            nbpersonnes: nbp,
+          },
+          success: function (reponse) { 
+            if (reponse.etat == "ok") {
+              $("#total_prix").html(reponse.reservation.prix + " &euro;"); // Mets à jour le prix
+              updateOptions(reponse.reservation.options); // Mets à jour les options
+            } else {
+              alert("Erreur de suppression");
             }
-            b_prix.textContent=p_final;
-            ListeOptions();
-        }    
-    })
-})
-
-b_personne.addEventListener("input",function(){
-    const prix_init=document.getElementById("prix_init").value;
-    let prix_temp=parseFloat(prix_init);
-    const nb_personne=parseInt(this.value);
-    let p_final=prix_temp*nb_personne;
-    document.getElementById("nb_p").value=this.value;
-
-    b_checked.forEach(box=>{
-            
-            if(box.checked){
-                p_final+=parseFloat(box.dataset.prix);
-                if (nb_personne > parseInt(box.dataset.nb)){
-                    p_final+=(nb_personne-parseInt(box.dataset.nb))*parseFloat(box.dataset.prix);
-                }
-                
-            } 
+          },
+        });
+      }
     });
-    b_prix.textContent=p_final;
-    
-})
+  });
+
+  b_personne.addEventListener("input", function () { // Changement du nb de personnes
+    let nbp = $(this).val();
+    let id = $("#voyage").val();
+    $("#nb_p").val(nbp); 
+    $.ajax({
+      url: "demandes.php",
+      type: "POST",
+      dataType: "json",
+      data: {
+        type: 4, // Changer le nb de personnes
+        voyage: id,
+        nbpersonnes: nbp,
+      },
+      success: function (reponse) {
+        if (reponse.etat == "ok") {
+          $("#total_prix").html(reponse.reservation.prix + " &euro;");
+        } else {
+          alert("Erreur de mise à jour");
+        }
+      },
+    });
+  });
+});
