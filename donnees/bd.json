@@ -1,38 +1,12 @@
 {
     "utilisateurs": [
         {
-            "login": "Ahmed",
-            "mot_de_passe": "ahmed123", 
-            "role": "normal",
-            "email": "ahmed@gmail.com",
-            "informations": {
-                "nom": "ytgygyugu",
-                "naissance": "1990-01-01",
-                "adresse": "123 Rue Principale, Paris, 75000"
-            },
-            "dates": {
-                "inscription": "2023-01-01",
-                "derniere_connexion": "2023-10-01"
-            },
-            "voyages": {
-                "consultes": [
-                    1,
-                    2
-                ],
-                "achetes": [
-                    1
-                ]
-            },
-            "naissance": "1990-01-01",
-            "nom": "ahmed"
-        },
-        {
             "login": "Marwa",
             "mot_de_passe": "marwa123",
             "role": "admin",
             "email": "marwa@gmail.com",
             "informations": {
-                "nom": "Dkhissi",
+                "nom": "Dkhi",
                 "naissance": "2005-05-12",
                 "adresse": "456 Avenue des Champs, Lyon, 69000"
             },
@@ -43,11 +17,30 @@
             "voyages": {
                 "consultes": [
                     2,
-                    3
+                    3,
+                    1,
+                    8,
+                    6,
+                    13
                 ],
                 "achetes": [
-                    2,
-                    3
+                    [
+                        2,
+                        [
+                            1,
+                            2
+                        ],
+                        849,
+                        2
+                    ],
+                    [
+                        3,
+                        [
+                            2
+                        ],
+                        999,
+                        1
+                    ]
                 ]
             }
         },
@@ -58,7 +51,7 @@
             "email": "renoua@gmail.com",
             "informations": {
                 "nom": "Fassi Fehri",
-                "naissance": "2006-12-20",
+                "naissance": "2005-12-20",
                 "adresse": "Rabat"
             },
             "dates": {
@@ -72,22 +65,68 @@
                     3
                 ],
                 "achetes": [
-                    3
+                    [
+                        2,
+                        [
+                            1,
+                            2
+                        ],
+                        849.990000000000009094947017729282379150390625,
+                        2
+                    ]
                 ]
             }
         },
         {
-            "login": "Test1",
-            "mot_de_passe": "test1234",
+            "login": "user1",
+            "mot_de_passe": "123",
             "role": "normal",
-            "email": "test@gmail.com",
+            "email": "user1@gmail.com",
             "informations": {
-                "nom": "test",
-                "naissance": "2005-12-27",
-                "adresse": "1234"
+                "nom": "nom1",
+                "naissance": "2005-01-27",
+                "adresse": "adresse 1"
             },
             "dates": {
-                "inscription": "03-05-2025",
+                "inscription": "18-05-2025",
+                "derniere_connexion": null
+            },
+            "voyages": {
+                "consultes": [],
+                "achetes": []
+            }
+        },
+        {
+            "login": "user2",
+            "mot_de_passe": "456",
+            "role": "normal",
+            "email": "user2@gmail.com",
+            "informations": {
+                "nom": "nom2",
+                "naissance": "2001-03-12",
+                "adresse": "adresse 2"
+            },
+            "dates": {
+                "inscription": "18-05-2025",
+                "derniere_connexion": null
+            },
+            "voyages": {
+                "consultes": [],
+                "achetes": []
+            }
+        },
+        {
+            "login": "user3",
+            "mot_de_passe": "789",
+            "role": "normal",
+            "email": "user3@gmail.com",
+            "informations": {
+                "nom": "nom3",
+                "naissance": "2006-06-16",
+                "adresse": "adresse 3"
+            },
+            "dates": {
+                "inscription": "18-05-2025",
                 "derniere_connexion": null
             },
             "voyages": {
@@ -102,9 +141,9 @@
             "titre": "Mascate",
             "img": "https:\/\/i.postimg.cc\/mgNNPnyS\/mascate.jpg",
             "dates": {
-                "debut": "2025-10-01",
+                "debut": "2025-10-02",
                 "fin": "2025-10-05",
-                "duree": "5"
+                "duree": 4
             },
             "liste_etapes": [
                 0,
@@ -112,14 +151,14 @@
             ],
             "liste_options": [
                 1,
-                2
+                2,
+                3,
+                4,
+                5,
+                6
             ],
-            "specificites": "Visite des villes historiques et d\u00e9gustation de cuisine locale",
-            "liste_personnes": [
-                "user2"
-            ],
-            "prix_total": 699.990000000000009094947017729282379150390625,
-            "statut": "pay\u00e9"
+            "specificites": "Aventure inspir\u00e9e de l'univers d'Aladdin",
+            "prix_total": 699
         },
         {
             "id": 2,
@@ -127,8 +166,8 @@
             "img": "https:\/\/i.postimg.cc\/VNd1JqBK\/williamsbourg.jpg",
             "dates": {
                 "debut": "2025-10-01",
-                "fin": "2025-10-5",
-                "duree": "5"
+                "fin": "2025-10-05",
+                "duree": 5
             },
             "liste_etapes": [
                 2,
@@ -136,12 +175,14 @@
             ],
             "liste_options": [
                 1,
-                2
+                2,
+                3,
+                4,
+                5,
+                6
             ],
-            "specificites": "Exploration du patrimoine colonial et balades en for\u00eat",
-            "liste_personnes": [],
-            "prix_total": 759.990000000000009094947017729282379150390625,
-            "statut": "disponible"
+            "specificites": "Aventure inspir\u00e9e de l'univers de Pocahontas",
+            "prix_total": 759
         },
         {
             "id": 3,
@@ -150,7 +191,7 @@
             "dates": {
                 "debut": "2025-05-01",
                 "fin": "2025-05-07",
-                "duree": "7"
+                "duree": 7
             },
             "liste_etapes": [
                 4,
@@ -158,12 +199,302 @@
             ],
             "liste_options": [
                 1,
-                2
+                2,
+                3,
+                4,
+                5,
+                6
             ],
-            "specificites": "Visite de l'arm\u00e9e de terre cuite et des temples anciens",
-            "liste_personnes": [],
-            "prix_total": 899.990000000000009094947017729282379150390625,
-            "statut": "disponible"
+            "specificites": "Aventure inspir\u00e9e de l'univers de Mulan",
+            "prix_total": 899
+        },
+        {
+            "id": 4,
+            "titre": "Amazonie",
+            "img": "https://i.postimg.cc/76kvZ8fw/amazonie.jpg",
+            "dates": {
+                "debut": "2025-06-20",
+                "fin": "2025-06-25",
+                "duree": 10
+            },
+            "liste_etapes": [
+                6,
+                7
+            ],
+            "liste_options": [
+                1,
+                2,
+                3,
+                4,
+                5,
+                6
+            ],
+            "specificites": "Aventure inspir\u00e9e de l'univers du Livre de la Jungle",
+            "prix_total": 810
+        },
+        {
+            "id": 5,
+            "titre": "Ouarzazate",
+            "img": "https://i.postimg.cc/kXhkttBj/ouarzazate.jpg",
+            "dates": {
+                "debut": "2025-08-05",
+                "fin": "2025-08-10",
+                "duree": 6
+            },
+            "liste_etapes": [
+                8,
+                9
+            ],
+            "liste_options": [
+                1,
+                2,
+                3,
+                4,
+                5,
+                6
+            ],
+            "specificites": "Aventure inspir\u00e9e de l'univers d'Aladdin au d\u00e9sert",
+            "prix_total": 830
+        },
+        {
+            "id": 6,
+            "titre": "Ecosse",
+            "img": "https://i.postimg.cc/Vs4ymh1P/ecosse.webp",
+            "dates": {
+                "debut": "2025-09-10",
+                "fin": "2025-09-15",
+                "duree": 5
+            },
+            "liste_etapes": [
+                10,
+                11
+            ],
+            "liste_options": [
+                1,
+                2,
+                3,
+                4,
+                5,
+                6
+            ],
+            "specificites": "Aventure inspir\u00e9e de l'univers de Rebelle",
+            "prix_total": 780
+        },
+        {
+            "id": 7,
+            "titre": "Nouvelle-Orl\u00e9ans",
+            "img": "https://i.postimg.cc/P5Cn6Qgs/nv-orleans.jpg",
+            "dates": {
+                "debut": "2025-10-01",
+                "fin": "2025-10-06",
+                "duree": 5
+            },
+            "liste_etapes": [
+                12,
+                13
+            ],
+            "liste_options": [
+                1,
+                2,
+                3,
+                4,
+                5,
+                6
+            ],
+            "specificites": "Aventure inspir\u00e9e de l'univers de La Princesse et la Grenouille",
+            "prix_total": 840
+        },
+        {
+            "id": 8,
+            "titre": "Tours",
+            "img": "https://i.postimg.cc/Fss4S4GK/tours.avif",
+            "dates": {
+                "debut": "2025-11-10",
+                "fin": "2025-11-15",
+                "duree": 5
+            },
+            "liste_etapes": [
+                14,
+                15
+            ],
+            "liste_options": [
+                1,
+                2,
+                3,
+                4,
+                5,
+                6
+            ],
+            "specificites": "Aventure inspir\u00e9e de l'univers de La Belle et la B\u00eate",
+            "prix_total": 850
+        },
+        {
+            "id": 9,
+            "titre": "Santa Cecilia",
+            "img": "https://i.postimg.cc/PJKn73fh/santa-cecilia.jpg",
+            "dates": {
+                "debut": "2025-12-01",
+                "fin": "2025-12-07",
+                "duree": 7
+            },
+            "liste_etapes": [
+                16,
+                17
+            ],
+            "liste_options": [
+                1,
+                2,
+                3,
+                4,
+                5,
+                6
+            ],
+            "specificites": "Aventure inspir\u00e9e de l'univers de Coco",
+            "prix_total": 1100
+        },
+        {
+            "id": 10,
+            "titre": "Kyoto",
+            "img": "https://i.postimg.cc/mZS4hDYq/kyoto.webp",
+            "dates": {
+                "debut": "2025-07-20",
+                "fin": "2025-08-31",
+                "duree": 11
+            },
+            "liste_etapes": [
+                18,
+                19
+            ],
+            "liste_options": [
+                1,
+                2,
+                3,
+                4,
+                5,
+                6
+            ],
+            "specificites": "Aventure inspir\u00e9e de l'univers de la Princesse Kaguya",
+            "prix_total": 900
+        },
+        {
+            "id": 11,
+            "titre": "Churchill - Terres Bor\u00e9ales du Canada",
+            "img": "https://i.postimg.cc/htxLnHxS/adobestock-60636592-min-1280x800.webp",
+            "dates": {
+                "debut": "2025-11-01",
+                "fin": "2025-11-03",
+                "duree": 3
+            },
+            "liste_etapes": [
+                20,
+                21
+            ],
+            "liste_options": [
+                1,
+                2,
+                3,
+                4,
+                5,
+                6
+            ],
+            "specificites": "Aventure inspir\u00e9e de l'univers de Fr\u00e8res des Ours",
+            "prix_total": 1070
+        },
+        {
+            "id": 12,
+            "titre": "Laponie",
+            "img": "https://i.postimg.cc/PxsHvvFG/laponie.jpg",
+            "dates": {
+                "debut": "2025-09-05",
+                "fin": "2025-09-08",
+                "duree": 3
+            },
+            "liste_etapes": [
+                22,
+                23
+            ],
+            "liste_options": [
+                1,
+                2,
+                3,
+                4,
+                5,
+                6
+            ],
+            "specificites": "Aventure inspir\u00e9e de la Reine des Neiges",
+            "prix_total": 950
+        },
+        {
+            "id": 13,
+            "titre": "Santorin",
+            "img": "https://i.postimg.cc/W4Jj4w86/santorin.webp",
+            "dates": {
+                "debut": "2025-09-01",
+                "fin": "2025-09-06",
+                "duree": 6
+            },
+            "liste_etapes": [
+                24,
+                25
+            ],
+            "liste_options": [
+                1,
+                2,
+                3,
+                4,
+                5,
+                6
+            ],
+            "specificites": "Aventure inspir\u00e9e de l'univers d'Atlantide, l'empire perdu",
+            "prix_total": 1100
+        },
+        {
+            "id": 14,
+            "titre": "Prague",
+            "img": "https://i.postimg.cc/KjmyJS2J/prague.jpg",
+            "dates": {
+                "debut": "2025-08-15",
+                "fin": "2025-08-24",
+                "duree": 9
+            },
+            "liste_etapes": [
+                26,
+                27
+            ],
+            "liste_options": [
+                1,
+                2,
+                3,
+                4,
+                5,
+                6
+            ],
+            "specificites": "Aventure inspir\u00e9e de l'univers de Cendrillon",
+            "prix_total": 870
+        },
+        {
+            "id": 15,
+            "titre": "Tahiti",
+            "img": "https://i.postimg.cc/wjMgCpsr/tahiti.webp",
+            "dates": {
+                "debut": "2025-08-10",
+                "fin": "2025-08-25",
+                "duree": 15
+            },
+            "liste_etapes": [
+                28,
+                29
+            ],
+            "liste_options": [
+                1,
+                2,
+                3,
+                4,
+                5,
+                6
+            ],
+            "specificites": "Aventure inspir\u00e9e de l'univers de Vaiana",
+            "prix_total": 1150
         }
     ],
     "etapes": [
@@ -178,8 +509,7 @@
             "options": [
                 "Visite guid\u00e9e",
                 "Mus\u00e9e arch\u00e9ologique"
-            ],
-            "personnes_supplementaires": []
+            ]
         },
         {
             "id": 1,
@@ -192,8 +522,7 @@
             "options": [
                 "Excursion de plong\u00e9e en apn\u00e9e dans les \u00eeles Daymaniat",
                 "Excursion en bateau pour observer les dauphins"
-            ],
-            "personnes_supplementaires": []
+            ]
         },
         {
             "id": 2,
@@ -206,8 +535,7 @@
             "options": [
                 "Visite guid\u00e9e",
                 "Mus\u00e9e arch\u00e9ologique"
-            ],
-            "personnes_supplementaires": []
+            ]
         },
         {
             "id": 3,
@@ -219,8 +547,7 @@
             },
             "options": [
                 "Visite guid\u00e9e"
-            ],
-            "personnes_supplementaires": []
+            ]
         },
         {
             "id": 4,
@@ -234,8 +561,7 @@
                 "Visite guid\u00e9e",
                 "Mus\u00e9e arch\u00e9ologique",
                 "D\u00e9jeuner traditionnel chinois"
-            ],
-            "personnes_supplementaires": []
+            ]
         },
         {
             "id": 5,
@@ -249,8 +575,319 @@
                 "D\u00eener royal",
                 "Spectacle d\u2019op\u00e9ra traditionnel",
                 "Cours de calligraphie"
-            ],
-            "personnes_supplementaires": []
+            ]
+        },
+        {
+            "id": 6,
+            "titre": "Exploration en pirogue",
+            "duree": "3",
+            "position": {
+                "gps": "-3.4653, -62.2159",
+                "lieu": "Amazone, Br\u00e9sil"
+            },
+            "options": [
+                "Observation d'animaux",
+                "Randonn\u00e9e guid\u00e9e en for\u00eat"
+            ]
+        },
+        {
+            "id": 7,
+            "titre": "Nuit en lodge dans la jungle",
+            "duree": "3",
+            "position": {
+                "gps": "-3.1190, -60.0217",
+                "lieu": "For\u00eat amazonienne"
+            },
+            "options": [
+                "H\u00e9bergement \u00e9cologique",
+                "D\u00eener traditionnel"
+            ]
+        },
+        {
+            "id": 8,
+            "titre": "Randonn\u00e9e dans l\u2019oasis de Fint",
+            "duree": "3",
+            "position": {
+                "gps": "30.8928, -6.9138",
+                "lieu": "Ouarzazate, Maroc"
+            },
+            "options": [
+                "D\u00e9couverte des kasbahs",
+                "Rencontre avec les habitants"
+            ]
+        },
+        {
+            "id": 9,
+            "titre": "Excursion dans les dunes de Merzouga",
+            "duree": "3",
+            "position": {
+                "gps": "31.1000, -4.0000",
+                "lieu": "D\u00e9sert du Sahara, Maroc"
+            },
+            "options": [
+                "Balade \u00e0 dos de chameau",
+                "Soir\u00e9e berb\u00e8re"
+            ]
+        },
+        {
+            "id": 10,
+            "titre": "Randonn\u00e9e dans les Highlands",
+            "duree": "3",
+            "position": {
+                "gps": "56.8198, -5.1052",
+                "lieu": "Glencoe, \u00c9cosse"
+            },
+            "options": [
+                "L\u00e9gendes locales",
+                "Exploration de ruines"
+            ]
+        },
+        {
+            "id": 11,
+            "titre": "C\u00e9r\u00e9monie traditionnelle celte",
+            "duree": "2",
+            "position": {
+                "gps": "56.7969, -5.0036",
+                "lieu": "Fort William, \u00c9cosse"
+            },
+            "options": [
+                "Danses traditionnelles",
+                "Costumes historiques"
+            ]
+        },
+        {
+            "id": 12,
+            "titre": "Balade dans le Vieux Carr\u00e9 fran\u00e7ais",
+            "duree": "3",
+            "position": {
+                "gps": "29.9584, -90.0640",
+                "lieu": "Nouvelle-Orl\u00e9ans, USA"
+            },
+            "options": [
+                "Jazz live",
+                "Cuisine cajun"
+            ]
+        },
+        {
+            "id": 13,
+            "titre": "Croisi\u00e8re dans les bayous",
+            "duree": "2",
+            "position": {
+                "gps": "29.9800, -90.2500",
+                "lieu": "Louisiane, USA"
+            },
+            "options": [
+                "Observation des alligators",
+                "Contes vaudou"
+            ]
+        },
+        {
+            "id": 14,
+            "titre": "Visite du Ch\u00e2teau de Tours",
+            "duree": "3",
+            "position": {
+                "gps": "47.3941, 0.6920",
+                "lieu": "Ch\u00e2teau de Tours, Tours, France"
+            },
+            "options": [
+                "Visite guid\u00e9e costum\u00e9e",
+                "D\u00e9couverte des jardins \u00e0 la fran\u00e7aise"
+            ]
+        },
+        {
+            "id": 15,
+            "titre": "Balade romantique dans le vieux Tours",
+            "duree": "2",
+            "position": {
+                "gps": "47.3944, 0.6848",
+                "lieu": "Centre historique de Tours, France"
+            },
+            "options": [
+                "Visite nocturne aux chandelles",
+                "Pause caf\u00e9 dans un salon de th\u00e9 typique"
+            ]
+        },
+        {
+            "id": 16,
+            "titre": "Atelier musique et tradition",
+            "duree": "3",
+            "position": {
+                "gps": "20.6786, -101.3546",
+                "lieu": "Santa Cecilia, Mexique"
+            },
+            "options": [
+                "Initiation \u00e0 la guitare",
+                "Cr\u00e9ation de calaveras"
+            ]
+        },
+        {
+            "id": 17,
+            "titre": "Parade du D\u00eda de Muertos",
+            "duree": "3",
+            "position": {
+                "gps": "20.6800, -101.3600",
+                "lieu": "Santa Cecilia, Mexique"
+            },
+            "options": [
+                "D\u00e9fil\u00e9 costum\u00e9",
+                "Visite au cimeti\u00e8re illumin\u00e9"
+            ]
+        },
+        {
+            "id": 18,
+            "titre": "Balade dans les temples anciens",
+            "duree": "3",
+            "position": {
+                "gps": "35.0116, 135.7681",
+                "lieu": "Kyoto, Japon"
+            },
+            "options": [
+                "C\u00e9r\u00e9monie du th\u00e9",
+                "Visite de sanctuaires"
+            ]
+        },
+        {
+            "id": 19,
+            "titre": "Festival des lucioles",
+            "duree": "3",
+            "position": {
+                "gps": "35.0150, 135.7700",
+                "lieu": "Kyoto, Japon"
+            },
+            "options": [
+                "Port de yukata",
+                "Lancer de lanternes"
+            ]
+        },
+        {
+            "id": 20,
+            "titre": "Safari photo des ours polaires",
+            "duree": "2",
+            "position": {
+                "gps": "58.7684, -94.1650",
+                "lieu": "Churchill, Manitoba, Canada"
+            },
+            "options": [
+                "Sortie en v\u00e9hicule chenill\u00e9",
+                "Conf\u00e9rence sur la faune arctique"
+            ]
+        },
+        {
+            "id": 21,
+            "titre": "Observation des aurores bor\u00e9ales",
+            "duree": "1",
+            "position": {
+                "gps": "69.0000, 27.0000",
+                "lieu": "Laponie, Finlande"
+            },
+            "options": [
+                "Excursion de nuit",
+                "Photographie c\u00e9leste"
+            ]
+        },
+        {
+            "id": 22,
+            "titre": "Observation des aurores boréales",
+            "duree": "4",
+            "position": {
+              "gps": "66.5410, 25.8450",
+              "lieu": "Laponie, Finlande"
+            },
+            "options": [
+              "Sortie nocturne guidée",
+              "Photographe professionnel"
+            ]
+          },
+          {
+            "id": 23,
+            "titre": "Balade en traîneau à chiens",
+            "duree": "3",
+            "position": {
+              "gps": "66.5350, 25.8400",
+              "lieu": "Laponie, Finlande"
+            },
+            "options": [
+              "Initiation conduite traîneau",
+              "Balade panoramique"
+            ]
+          },
+        {
+            "id": 24,
+            "titre": "Visite du site arch\u00e9ologique d'Akrotiri",
+            "duree": "4",
+            "position": {
+                "gps": "36.3603, 25.4330",
+                "lieu": "Akrotiri, Santorin, Gr\u00e8ce"
+            },
+            "options": [
+                "Visite guid\u00e9e",
+                "Atelier de peinture murale antique"
+            ]
+        },
+        {
+            "id": 25,
+            "titre": "Croisi\u00e8re au coucher du soleil dans la caldeira",
+            "duree": "2",
+            "position": {
+                "gps": "36.3932, 25.4615",
+                "lieu": "Caldeira de Santorin, Gr\u00e8ce"
+            },
+            "options": [
+                "D\u00eener \u00e0 bord",
+                "Musique live"
+            ]
+        },
+        {
+            "id": 26,
+            "titre": "Visite du Ch\u00e2teau de Prague",
+            "duree": "3",
+            "position": {
+                "gps": "50.0909, 14.3987",
+                "lieu": "Ch\u00e2teau de Prague, R\u00e9publique Tch\u00e8que"
+            },
+            "options": [
+                "Visite guid\u00e9e costum\u00e9e",
+                "D\u00e9couverte des jardins royaux"
+            ]
+        },
+        {
+            "id": 27,
+            "titre": "Balade sur le Pont Charles au coucher du soleil",
+            "duree": "2",
+            "position": {
+                "gps": "50.0865, 14.4114",
+                "lieu": "Pont Charles, Prague"
+            },
+            "options": [
+                "Photographie professionnelle",
+                "Musique live locale"
+            ]
+        },
+        {
+            "id": 28,
+            "titre": "Excursion en pirogue traditionnelle",
+            "duree": "1",
+            "position": {
+                "gps": "-18.0000, -159.0000",
+                "lieu": "Tahiti - Polyn\u00e9sie Fran\u00e7aise)"
+            },
+            "options": [
+                "P\u00eache traditionnelle",
+                "Excursion guid\u00e9e"
+            ]
+        },
+        {
+            "id": 29,
+            "titre": "Journ\u00e9e sur un motu (\u00eelot priv\u00e9)",
+            "duree": "5",
+            "position": {
+                "gps": "-18.0500, -159.0500",
+                "lieu": "Tahiti - Polyn\u00e9sie Fran\u00e7aise)"
+            },
+            "options": [
+                "Snorkeling guid\u00e9",
+                "Veill\u00e9e autour du feu"
+            ]
         }
     ],
     "options": [
@@ -265,6 +902,30 @@
             "titre": "Hebergement luxe",
             "nombre_personnes": 1,
             "prix_par_personne": 100
+        },
+        {
+            "id": 3,
+            "titre": "Demi-pension",
+            "nombre_personnes": 2,
+            "prix_par_personne": 30
+        },
+        {
+            "id": 4,
+            "titre": "Pension compl\u00e8te",
+            "nombre_personnes": 1,
+            "prix_par_personne": 60
+        },
+        {
+            "id": 5,
+            "titre": "Transport inclus",
+            "nombre_personnes": 1,
+            "prix_par_personne": 40
+        },
+        {
+            "id": 6,
+            "titre": "Assurance voyage",
+            "nombre_personnes": 1,
+            "prix_par_personne": 20
         }
     ],
     "paiements": [
